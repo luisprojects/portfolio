@@ -5,66 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to My Portfolio</h1>
-        <div class="navigation">
-            <a href="finances.html" class="button finances">FINANCES</a>
-            <a href="studies.html" class="button studies">STUDIES</a>
-            <a href="work.html" class="button work">WORK</a>
-            <a href="schedule.html" class="button schedule">SCHEDULE</a>
-            <button id="logout-btn" class="button">SIGN OUT</button>
-        </div>
-        <div class="about-me section">
-            <h2>About Me</h2>
-            <p>Hello! I'm Luis, a student of AI and an aspiring professional in the tech world. I love working on diverse projects that challenge my skills and creativity. Welcome to my portfolio!</p>
-        </div>
-        <div class="featured-projects section">
-            <h2>Featured Projects</h2>
-            <div class="project">
-                <h3>Project 1</h3>
-                <p>A brief description of Project 1. <a href="#">Read more</a></p>
+        <h1>My Portfolio</h1>
+        <div class="navigation-container">
+            <div class="navigation">
+                <a href="finances.html" class="button finances">FINANCES</a>
+                <a href="studies.html" class="button studies">STUDIES</a>
+                <a href="work.html" class="button work">WORK</a>
+                <a href="schedule.html" class="button schedule">SCHEDULE</a>
             </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>A brief description of Project 2. <a href="#">Read more</a></p>
-            </div>
+            <button class="button logout" onclick="logout()">Sign Out</button>
         </div>
-        <div class="skills section">
-            <h2>Skills & Technologies</h2>
-            <ul>
-                <li>HTML & CSS</li>
-                <li>JavaScript</li>
-                <li>Firebase</li>
-                <li>Node.js</li>
-            </ul>
+        <div class="datetime">
+            <span id="date"></span>
+            <span id="time"></span>
         </div>
-        <div class="blog section">
+        <div class="blog">
             <h2>Blog</h2>
-            <div class="blog-entry">
-                <p><strong>20/05</strong> Worked on realizing websites via git, improved UI, worked on log-in interface and debugging.</p>
-                <p>Ideas to work on these days:</p>
+            <div class="blog-post">
+                <h3>20/05</h3>
+                <p>Worked on realizing website via Git, improved UI, worked on login interface and debugging.</p>
+                <p>Ideas to work on these days:
                 <ul>
                     <li>Debugging Sign-Out button to set login to false and redirect to portfolio/login.html</li>
                     <li>Change UI to make it look more professional</li>
-                    <li>Edit text, add weekly budget and find a way to easily keep track of expenses</li>
+                    <li>Edit text, add weekly budget, and find a way to easily keep track of expenses</li>
                 </ul>
-                <h3>Comments:</h3>
-                <div id="comments"></div>
-                <form id="comment-form">
-                    <input type="text" id="comment-input" placeholder="Add a comment..." required>
-                    <button type="submit">Post</button>
-                </form>
+                </p>
+                <div class="comment-section">
+                    <h4>Comments:</h4>
+                    <!-- Comments will be dynamically added here -->
+                </div>
+                <input type="text" id="commentInput" placeholder="Add a comment">
+                <button onclick="addComment()">Add Comment</button>
             </div>
         </div>
-        <div class="footer">
-            <p>Last updated: <span id="last-updated"></span></p>
+        <div class="image-container left">
+            <img id="left-image" src="images/left1.jpg" alt="Left Image">
+        </div>
+        <div class="image-container right">
+            <img id="right-image" src="images/right1.jpg" alt="Right Image">
         </div>
     </div>
+    <script src="firebase.js"></script>
+    <script src="script.js"></script>
+    <script src="last-updated.js"></script>
 </body>
 </html>

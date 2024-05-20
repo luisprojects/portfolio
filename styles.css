@@ -9,6 +9,7 @@ body {
 .container {
     max-width: 800px;
     margin: auto;
+    position: relative;
 }
 
 h1 {
@@ -255,4 +256,26 @@ th {
 .comment h4 {
     color: #ff9800;
     margin-top: 0;
+}
+
+/* Image container styles */
+.image-container {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image-container.left {
+    left: 0;
+}
+
+.image-container.right {
+    right: 0;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
 }
