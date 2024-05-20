@@ -1,20 +1,26 @@
-function updateDateTime() {
-    const now = new Date();
-    const date = now.toLocaleDateString();
-    const time = now.toLocaleTimeString();
-    document.getElementById('date').textContent = date;
-    document.getElementById('time').textContent = time;
-}
-
-setInterval(updateDateTime, 1000);
-
-function toggleMenu() {
-    const menuItems = document.getElementById('menuItems');
-    menuItems.classList.toggle('hidden');
-}
-
 document.addEventListener('DOMContentLoaded', function() {
-    if (localStorage.getItem('loggedIn') !== 'true') {
-        window.location.href = 'login.html';
+    const loginForm = document.getElementById('login-form');
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Set your own username and password
+            const validUsername = 'your-username';
+            const validPassword = 'your-password';
+
+            if (username === validUsername && password === validPassword) {
+                localStorage.setItem('loggedIn', 'true');
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('login-error').style.display = 'block';
+            }
+        });
+    } else {
+        if (localStorage.getItem('loggedIn') !== 'true') {
+            window.location.href = 'login.html';
+        }
     }
 });
