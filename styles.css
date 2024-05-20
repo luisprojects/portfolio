@@ -98,7 +98,8 @@ a:hover {
 
 .navigation {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .navigation a {
@@ -107,6 +108,9 @@ a:hover {
     color: #000;
     border-radius: 5px;
     text-decoration: none;
+    font-size: 24px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
 }
 
 .navigation a:hover {
@@ -202,4 +206,29 @@ th, td {
 
 th {
     background-color: #444;
+}
+
+.logout-container {
+    margin-top: 20px;
+}
+
+#logout-button {
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#logout-button:hover {
+    background-color: #cc0000;
+}
+
+.last-updated {
+    margin-top: 20px;
+    font-size: 16px;
 }
