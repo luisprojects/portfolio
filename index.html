@@ -3,68 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <style>
-        /* Add your CSS styles here */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #222;
-            color: white;
-            text-align: center;
-        }
-        #dashboard {
-            margin-top: 50px;
-        }
-        button {
-            display: block;
-            width: 200px;
-            margin: 10px auto;
-            padding: 15px;
-            font-size: 16px;
-            background-color: orange;
-            border: none;
-            cursor: pointer;
-        }
-        #logout-btn {
-            background-color: red;
-            color: white;
-        }
-    </style>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="dashboard">
-        <button id="finances-btn">FINANCES</button>
-        <button id="studies-btn">STUDIES</button>
-        <button id="work-btn">WORK</button>
-        <button id="schedule-btn">SCHEDULE</button>
-        <button id="logout-btn">LOGOUT</button>
-        <p id="last-updated">Last Updated: May 20, 2024 at 12:00 PM</p>
+    <div class="container">
+        <h1>Welcome to My Portfolio</h1>
+        <div class="navigation-container">
+            <div class="navigation">
+                <a href="finances.html" class="button finances">Finances</a>
+                <a href="studies.html" class="button studies">Studies</a>
+                <a href="work.html" class="button work">Work</a>
+                <a href="schedule.html" class="button schedule">Schedule</a>
+            </div>
+        </div>
+        <div class="logout-container">
+            <button id="logoutButton" class="button logout">Logout</button>
+        </div>
+        <div class="datetime">
+            <span id="date"></span>
+            <span id="time"></span>
+        </div>
     </div>
-
+    <script src="script.js"></script>
     <script>
-        // Function to update the last updated timestamp
-        const updateTimestamp = () => {
-            const currentDate = new Date();
-            document.getElementById('last-updated').innerText = `Last Updated: ${currentDate.toLocaleString()}`;
-        };
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if the user is logged in
+            if (localStorage.getItem('loggedIn') !== 'true') {
+                window.location.href = 'login.html';
+            }
 
-        // Function to handle logout
-        const handleLogout = () => {
-            // Clear session or token (assuming token is stored in localStorage)
-            localStorage.clear();
-            sessionStorage.clear();
+            // Display current date and time
+            const dateElement = document.getElementById('date');
+            const timeElement = document.getElementById('time');
+            const now = new Date();
+            dateElement.textContent = now.toLocaleDateString();
+            timeElement.textContent = now.toLocaleTimeString();
 
-            // Redirect to login page (update the path to your actual login page)
-            window.location.href = 'login.html';
-        };
-
-        // Set up event listeners
-        document.addEventListener('DOMContentLoaded', (event) => {
-            // Update timestamp on page load
-            updateTimestamp();
-
-            // Attach event listener to the logout button
-            document.getElementById('logout-btn').addEventListener('click', handleLogout);
+            // Logout button functionality
+            const logoutButton = document.getElementById('logoutButton');
+            logoutButton.addEventListener('click', function() {
+                localStorage.removeItem('loggedIn');
+                window.location.href = 'login.html';
+            });
         });
     </script>
 </body>
