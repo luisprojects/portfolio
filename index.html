@@ -5,31 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>My Portfolio</h1>
-        <div class="navigation-container">
-            <div class="navigation">
-                <a href="finances.html" class="button finances">Finances</a>
-                <a href="studies.html" class="button studies">Studies</a>
-                <a href="work.html" class="button work">Work</a>
-                <a href="schedule.html" class="button schedule">Schedule</a>
+        <h1>Welcome to My Portfolio</h1>
+        <div class="buttons">
+            <a href="finances.html" class="button">Finances</a>
+            <a href="studies.html" class="button">Studies</a>
+            <a href="work.html" class="button">Work</a>
+            <a href="schedule.html" class="button">Schedule</a>
+            <button onclick="logout()" class="button">Sign Out</button>
+        </div>
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>Hello! I'm Luis, a student of AI and an aspiring professional in the tech world. I love working on diverse projects that challenge my skills and creativity. Welcome to my portfolio!</p>
+        </div>
+        <div class="projects">
+            <h2>Featured Projects</h2>
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>A brief description of Project 1. <a href="#">Read more</a></p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>A brief description of Project 2. <a href="#">Read more</a></p>
             </div>
         </div>
-        <button id="logoutBtn" class="button logout">Logout</button>
+        <div class="skills">
+            <h2>Skills & Technologies</h2>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>Firebase</li>
+                <li>Node.js</li>
+            </ul>
+        </div>
+        <p>Last updated: <span id="last-updated"></span></p>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (localStorage.getItem('loggedIn') !== 'true') {
-                window.location.href = 'login.html';
-            }
-
-            document.getElementById('logoutBtn').addEventListener('click', function() {
-                localStorage.removeItem('loggedIn');
-                window.location.href = 'login.html';
-            });
-        });
+        // Set last updated date
+        document.getElementById('last-updated').innerText = new Date().toLocaleDateString();
     </script>
 </body>
 </html>
