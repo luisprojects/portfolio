@@ -1,130 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Finances</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finances</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>My Finances</h1>
-    <div class="finance-section">
-      <div class="income">
-        <h2>Incomes <span class="symbol">+</span></h2>
-        <ul>
-          <li>Job: €14.45/h, minimum 28h/week (~€400/week)</li>
-          <li>DUO: €416/month (24th of each month)</li>
-          <li>Health Insurance Allowance: €120/month (20th of each month)</li>
-          <li>Rent Allowance: €260/month (20th of each month)</li>
-          <li>Spanish Pension: €670/month (25th of each month, double in June and November)</li>
-        </ul>
-      </div>
-      <div class="expense">
-        <h2>Expenses <span class="symbol">-</span></h2>
-        <ul>
-          <li>Rent: €566/month (increasing to €650 in July 2024)</li>
-          <li>Health Insurance: €140/month</li>
-          <li>Utilities and Groceries: €10/day (~€300/month)</li>
-          <li>Purchases (fun stuff, clothes): €80/week</li>
-          <li>Loan Repayment (ING): €350/month</li>
-        </ul>
-      </div>
+    <div class="container">
+        <h1>Finances</h1>
+        <div class="section">
+            <h2>Incomes</h2>
+            <ul>
+                <li>Job: €14.45/hr, minimum 28h/week (~€400/week)</li>
+                <li>DUO: €416/month</li>
+                <li>Health Insurance Allowance: €120/month</li>
+                <li>Rent Allowance: €260/month</li>
+                <li>Spanish Pension: €670/month</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Expenses</h2>
+            <ul>
+                <li>Rent: €556/month (increasing to €650 in July 2024)</li>
+                <li>Health Insurance: €140/month</li>
+                <li>Utilities and Groceries: €10/day (~€300/month)</li>
+                <li>Purchases: €80/week</li>
+                <li>Loan Repayment: €350/month</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Income and Expense Schedule</h2>
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Amount</th>
+                </tr>
+                <tr>
+                    <td>Job</td>
+                    <td>€400/week</td>
+                </tr>
+                <tr>
+                    <td>DUO</td>
+                    <td>€416/month</td>
+                </tr>
+                <tr>
+                    <td>Health Insurance Allowance</td>
+                    <td>€120/month</td>
+                </tr>
+                <tr>
+                    <td>Rent Allowance</td>
+                    <td>€260/month</td>
+                </tr>
+                <tr>
+                    <td>Spanish Pension</td>
+                    <td>€670/month</td>
+                </tr>
+                <tr>
+                    <td>Rent</td>
+                    <td>€556/month</td>
+                </tr>
+                <tr>
+                    <td>Health Insurance</td>
+                    <td>€140/month</td>
+                </tr>
+                <tr>
+                    <td>Utilities and Groceries</td>
+                    <td>€300/month</td>
+                </tr>
+                <tr>
+                    <td>Purchases</td>
+                    <td>€80/week</td>
+                </tr>
+                <tr>
+                    <td>Loan Repayment</td>
+                    <td>€350/month</td>
+                </tr>
+            </table>
+        </div>
+        <div class="section">
+            <h2>Savings Plan</h2>
+            <ol>
+                <li>Track all expenses and incomes to create a clear budget.</li>
+                <li>Reduce discretionary spending where possible.</li>
+                <li>Focus on paying off the ING loan as soon as possible to free up €350/month.</li>
+                <li>Save any surplus money in a high-yield savings account.</li>
+                <li>Consider finding additional part-time work or freelance opportunities to increase income.</li>
+            </ol>
+        </div>
+        <div class="section">
+            <h2>Savings Projection</h2>
+            <p>If you save a minimum of €1,000 per month, here's how much you'll have over the next few months:</p>
+            <!-- TODO: Add your savings projection details here -->
+        </div>
+        <div class="budget-notice">
+            <h3>Working on Weekly Budget</h3>
+        </div>
+        <a href="index.html" class="home-button">Home</a>
     </div>
-    <div class="savings-plan">
-      <h2>Savings Plan</h2>
-      <p>1. Track all expenses and incomes to create a clear budget.</p>
-      <p>2. Reduce discretionary spending where possible.</p>
-      <p>3. Focus on paying off the ING loan as soon as possible to free up €350/month.</p>
-      <p>4. Save any surplus money in a high-yield savings account.</p>
-      <p>5. Consider finding additional part-time work or freelance opportunities to increase income.</p>
-    </div>
-    <div class="savings-projection">
-      <h2>Savings Projection</h2>
-      <p>If you save a minimum of €1,000 per month, here’s how much you’ll have over the next few months:</p>
-      <ul>
-        <li>3 months: €3,000</li>
-        <li>6 months: €6,000</li>
-        <li>12 months: €12,000</li>
-      </ul>
-    </div>
-    <div class="financial-goals">
-      <h2>Financial Goals</h2>
-      <ul>
-        <li>Short-term: Save €5,000 for an emergency fund.</li>
-        <li>Medium-term: Pay off the remaining loan balance.</li>
-        <li>Long-term: Save for a down payment on a house.</li>
-      </ul>
-    </div>
-    <div class="income-expense-table">
-      <h2>Income and Expense Schedule</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Type</th>
-            <th>Detail</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Income</td>
-            <td>Salary from Salsa Shop</td>
-            <td>Every Tuesday</td>
-          </tr>
-          <tr>
-            <td>Income</td>
-            <td>DUO</td>
-            <td>24th of each month</td>
-          </tr>
-          <tr>
-            <td>Income</td>
-            <td>Health Insurance Allowance</td>
-            <td>20th of each month</td>
-          </tr>
-          <tr>
-            <td>Income</td>
-            <td>Rent Allowance</td>
-            <td>20th of each month</td>
-          </tr>
-          <tr>
-            <td>Income</td>
-            <td>Spanish Pension</td>
-            <td>25th of each month</td>
-          </tr>
-          <tr>
-            <td>Expense</td>
-            <td>Rent</td>
-            <td>Before 1st of the next month</td>
-          </tr>
-          <tr>
-            <td>Expense</td>
-            <td>Health Insurance</td>
-            <td>Before 1st of the next month</td>
-          </tr>
-          <tr>
-            <td>Expense</td>
-            <td>Loan Repayment (ING)</td>
-            <td>Before 1st of the next month</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="navigation">
-      <a href="index.html" class="button home">Home</a>
-    </div>
-    <div class="datetime">
-      <span id="date"></span>
-      <span id="time"></span>
-    </div>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      if (localStorage.getItem('loggedIn') !== 'true') {
-        window.location.href = 'login.html';
-      }
-    });
-  </script>
-  <script src="script.js"></script>
 </body>
 </html>

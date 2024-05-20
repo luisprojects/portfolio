@@ -174,3 +174,32 @@ a:hover {
 .schedule-table td.na-meeting {
     background-color: #9C27B0; /* Purple */
 }
+
+.budget-notice, .under-construction-notice {
+    background-color: #ff9800;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #fff;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #444;
+}
