@@ -1,42 +1,42 @@
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDgUAojmCBprTeY7_o3xGnDhDuPxOPvD_g",
-  authDomain: "portfolio-3014b.firebaseapp.com",
-  projectId: "portfolio-3014b",
-  storageBucket: "portfolio-3014b.appspot.com",
-  messagingSenderId: "764292816862",
-  appId: "1:764292816862:web:4e6fa598a3fc7b774ec74f",
-  measurementId: "G-F9J431P1SW"
-};
+import { auth } from './firebase.js';
+import { signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+// Handle login
+const loginForm = document.getElementById('login-form');
+if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
 
-// Get a reference to the auth service
-const auth = firebase.auth();
-
-// Login function
-function login() {
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-
-  auth.signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Store login state in localStorage
-      localStorage.setItem('loggedIn', 'true');
-      window.location.href = 'index.html';
-    })
-    .catch((error) => {
-      console.error('Login error:', error.message);
-      alert('Invalid login credentials. Please try again.');
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                localStorage.setItem('loggedIn', 'true');
+                window.location.href = 'index.html';
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert('Error: ' + errorMessage);
+            });
     });
 }
 
-// Add event listener for login
-document.getElementById('loginButton')?.addEventListener('click', login);
+// Handle logout
+window.logout = () => {
+    signOut(auth).then(() => {
+        localStorage.removeItem('loggedIn');
+        window.location.href = 'login.html';
+    }).catch((error) => {
+        alert('Error: ' + error.message);
+    });
+};
 
+// Check login status on page load
 document.addEventListener('DOMContentLoaded', function() {
-  if (localStorage.getItem('loggedIn') !== 'true' && window.location.pathname !== '/login.html') {
-    window.location.href = 'login.html';
-  }
+    if (localStorage.getItem('loggedIn') !== 'true') {
+        window.location.href = 'login.html';
+    }
 });

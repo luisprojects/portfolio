@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
 </head>
 <body>
     <div class="container">
@@ -19,11 +17,19 @@
                 <a href="schedule.html" class="button schedule">Schedule</a>
             </div>
         </div>
-        <div class="datetime">
-            <span id="date"></span>
-            <span id="time"></span>
-        </div>
+        <button id="logoutBtn" class="button logout">Logout</button>
     </div>
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('loggedIn') !== 'true') {
+                window.location.href = 'login.html';
+            }
+
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                localStorage.removeItem('loggedIn');
+                window.location.href = 'login.html';
+            });
+        });
+    </script>
 </body>
 </html>
