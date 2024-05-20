@@ -1,296 +1,176 @@
 body {
-    background-color: #000000;
-    color: #FFFFFF;
     font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
     margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    padding: 20px;
 }
 
 .container {
-    text-align: center;
-    width: 80%;
-    max-width: 1200px;
-    margin: 20px auto;
-    position: relative;
+    max-width: 800px;
+    margin: auto;
 }
 
 h1 {
-    color: #FFA500;
-    font-size: 3em;
-    margin-bottom: 40px;
+    text-align: center;
+    color: #ff9800;
 }
 
-.navigation-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 10px solid #FFA500;
-    padding: 20px;
-    background-color: #000000;
+.section {
+    margin-bottom: 20px;
 }
 
-.navigation {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+h2 {
+    color: #ff9800;
+    border-bottom: 2px solid #ff9800;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.box {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .button {
-    display: block;
-    width: 150px;
-    height: 70px;
-    line-height: 70px;
-    text-align: center;
+    display: inline-block;
+    background-color: #ff9800;
+    color: #000;
+    padding: 10px 20px;
+    margin: 5px;
     text-decoration: none;
-    color: #000000;
-    font-size: 1.5em;
-    font-weight: bold;
     border-radius: 5px;
-    margin: 0 auto;
 }
 
-.finances {
-    background-color: #00FF00;
+.button:hover {
+    background-color: #e68900;
 }
 
-.studies {
-    background-color: #0000FF;
-    color: #000000;
-}
-
-.work {
-    background-color: #FF0000;
-}
-
-.schedule {
-    background-color: #FFFFFF;
-    color: #000000;
-}
-
-.finance-section, .savings-plan, .savings-projection, .financial-goals {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.finance-section {
-    display: flex;
-    justify-content: space-between;
-    background-color: #333333;
-}
-
-.income, .expense {
-    width: 45%;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.income {
-    background-color: #00FF00;
-    color: #000000;
-}
-
-.expense {
-    background-color: #FF0000;
-    color: #000000;
-}
-
-.income h2, .expense h2 {
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.symbol {
-    font-size: 2em;
-    margin-left: 10px;
-}
-
-.savings-plan {
-    background-color: #333333;
-    color: #FFA500;
-}
-
-.savings-plan h2 {
-    color: #FFA500;
-}
-
-.savings-plan p {
-    color: #FFA500;
-}
-
-.savings-projection {
-    background-color: #00FFFF;
-    color: #000000;
-}
-
-.savings-projection h2 {
-    color: #000000;
-}
-
-.savings-projection p, .savings-projection ul {
-    color: #000000;
-}
-
-.financial-goals {
-    background-color: #FFFF00;
-    color: #000000;
-}
-
-.financial-goals h2 {
-    color: #000000;
-}
-
-.financial-goals ul {
-    color: #000000;
-}
-
-.income-expense-table {
-    background-color: #444444;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-.income-expense-table h2 {
-    color: #FFA500;
-}
-
-.income-expense-table table {
+table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
 }
 
-.income-expense-table th, .income-expense-table td {
-    border: 1px solid #FFFFFF;
+th, td {
     padding: 10px;
     text-align: left;
 }
 
-.navigation {
-    margin-top: 20px;
+th {
+    background-color: #ff9800;
+    color: #000;
 }
 
-.button.home {
-    background-color: #FFFFFF;
-    color: #000000;
+tbody tr:nth-child(odd) {
+    background-color: #1e1e1e;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #2e2e2e;
+}
+
+/* Additional styles from previous updates */
+
+a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.header, .footer {
+    text-align: center;
     margin: 20px 0;
 }
 
-.datetime {
-    margin-top: 20px;
-    color: #FFA500;
-    font-size: 1.2em;
-}
-
-.hidden {
-    display: none;
-}
-
-.menu {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-}
-
-.menu button {
-    background-color: #FFA500;
-    color: #000000;
-    font-size: 1em;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.menu div {
-    margin-top: 10px;
-}
-
-.menu div a {
-    display: block;
-    background-color: #FFFFFF;
-    color: #000000;
-    padding: 10px 20px;
-    margin-top: 5px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* Additional styles for work page */
-.work-section {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #333333;
-}
-
-.work-box {
-    background-color: #444444;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-.salary-analysis, .weekly-calendar, .contract-details, .savings-analysis {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #555555;
-}
-
-.salary-analysis h2, .weekly-calendar h2, .contract-details h2, .savings-analysis h2 {
-    color: #FFA500;
-}
-
-.salary-analysis p, .contract-details p, .savings-analysis p, .savings-analysis ul {
-    color: #FFFFFF;
-}
-
-.salary-analysis ul, .savings-analysis ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.salary-analysis ul li, .savings-analysis ul li {
-    background-color: #666666;
-    margin: 5px 0;
+.navigation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
     padding: 10px;
     border-radius: 5px;
-    color: #FFFFFF;
 }
 
-.weekly-calendar table {
+.navigation {
+    display: flex;
+    gap: 10px;
+}
+
+.navigation a {
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    background-color: #e68900;
+}
+
+.datetime {
+    display: flex;
+    gap: 10px;
+}
+
+.datetime span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.home-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: #000;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.home-button:hover {
+    background-color: #e68900;
+}
+
+.schedule-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.weekly-calendar th, .weekly-calendar td {
-    border: 1px solid #FFFFFF;
-    padding: 10px;
-    text-align: center;
-    background-color: #777777;
-}
-
-.navigation {
-    margin-top: 20px;
-}
-
-.button.home {
-    background-color: #FFFFFF;
-    color: #000000;
     margin: 20px 0;
 }
 
-.datetime {
-    margin-top: 20px;
-    color: #FFA500;
-    font-size: 1.2em;
+.schedule-table th, .schedule-table td {
+    padding: 10px;
+    border: 1px solid #ff9800;
+    text-align: center;
+}
+
+.schedule-table th {
+    background-color: #ff9800;
+    color: #000;
+}
+
+.schedule-table td {
+    background-color: #1e1e1e;
+}
+
+.schedule-table td.study-session {
+    background-color: #4CAF50; /* Green */
+}
+
+.schedule-table td.work {
+    background-color: #f44336; /* Red */
+}
+
+.schedule-table td.free-time {
+    background-color: #2196F3; /* Blue */
+}
+
+.schedule-table td.na-meeting {
+    background-color: #9C27B0; /* Purple */
 }
