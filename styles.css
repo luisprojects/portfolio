@@ -236,3 +236,28 @@ th {
     from { transform: translateX(-100%); }
     to { transform: translateX(0); }
 }
+
+.schedule-table-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.get-ready {
+    background-color: #FFEB3B; /* Yellow */
+}
+
+.travel {
+    background-color: #FF9800; /* Orange */
+}
+
+.study-session {
+    background-color: #4CAF50; /* Green */
+}
+
+.break {
+    background-color: #03A9F4; /* Blue */
+}
+
+.work {
+    background-color: #F44336; /* Red */
+}
