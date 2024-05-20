@@ -8,49 +8,100 @@
 </head>
 <body>
     <div class="container">
-        <h1>My Portfolio</h1>
-        <div class="navigation-container">
-            <div class="navigation">
-                <a href="finances.html" class="button finances">FINANCES</a>
-                <a href="studies.html" class="button studies">STUDIES</a>
-                <a href="work.html" class="button work">WORK</a>
-                <a href="schedule.html" class="button schedule">SCHEDULE</a>
-            </div>
-            <button class="button logout" onclick="logout()">Sign Out</button>
-        </div>
-        <div class="datetime">
-            <span id="date"></span>
-            <span id="time"></span>
-        </div>
-        <div class="blog">
-            <h2>Blog</h2>
-            <div class="blog-post">
-                <h3>20/05</h3>
-                <p>Worked on realizing website via Git, improved UI, worked on login interface and debugging.</p>
-                <p>Ideas to work on these days:
-                <ul>
-                    <li>Debugging Sign-Out button to set login to false and redirect to portfolio/login.html</li>
-                    <li>Change UI to make it look more professional</li>
-                    <li>Edit text, add weekly budget, and find a way to easily keep track of expenses</li>
-                </ul>
-                </p>
-                <div class="comment-section">
-                    <h4>Comments:</h4>
-                    <!-- Comments will be dynamically added here -->
-                </div>
-                <input type="text" id="commentInput" placeholder="Add a comment">
-                <button onclick="addComment()">Add Comment</button>
-            </div>
-        </div>
         <div class="image-container left">
-            <img id="left-image" src="images/left1.jpg" alt="Left Image">
+            <img id="left-image" src="images/left1.jpg" alt="Left Image" class="side-image">
+        </div>
+        <div class="content">
+            <h1>My Portfolio</h1>
+            <div class="navigation-container">
+                <div class="navigation">
+                    <a href="finances.html" class="button finances">FINANCES</a>
+                    <a href="studies.html" class="button studies">STUDIES</a>
+                    <a href="work.html" class="button work">WORK</a>
+                    <a href="schedule.html" class="button schedule">SCHEDULE</a>
+                </div>
+            </div>
+            <div class="datetime">
+                <span id="date"></span>
+                <span id="time"></span>
+            </div>
+            <div class="blog">
+                <h2>Blog</h2>
+                <div class="blog-entry">
+                    <p>20/05 Worked on realizing websites via Git, improved UI, Worked on login interface and debugging.</p>
+                    <p>Ideas to work on these days:</p>
+                    <ul>
+                        <li>Debugging Sign-Out button to set login to false and redirect to portfolio/login.html</li>
+                        <li>Change UI to make it look more professional</li>
+                        <li>Edit text, add weekly budget, and find a way to easily keep track of expenses</li>
+                    </ul>
+                </div>
+                <div class="comment-section">
+                    <h3>Comments</h3>
+                    <input type="text" id="commentInput" placeholder="Add a comment">
+                    <button onclick="addComment()">Post</button>
+                    <div id="comments"></div>
+                </div>
+            </div>
         </div>
         <div class="image-container right">
-            <img id="right-image" src="images/right1.jpg" alt="Right Image">
+            <img id="right-image" src="images/right1.jpg" alt="Right Image" class="side-image">
         </div>
+        <button id="logoutButton" class="button logout" onclick="logout()">Sign Out</button>
     </div>
-    <script src="firebase.js"></script>
     <script src="script.js"></script>
-    <script src="last-updated.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-container left">
+            <img id="left-image" src="images/left1.jpg" alt="Left Image" class="side-image">
+        </div>
+        <div class="content">
+            <h1>My Portfolio</h1>
+            <div class="navigation-container">
+                <div class="navigation">
+                    <a href="finances.html" class="button finances">FINANCES</a>
+                    <a href="studies.html" class="button studies">STUDIES</a>
+                    <a href="work.html" class="button work">WORK</a>
+                    <a href="schedule.html" class="button schedule">SCHEDULE</a>
+                </div>
+            </div>
+            <div class="datetime">
+                <span id="date"></span>
+                <span id="time"></span>
+            </div>
+            <div class="blog">
+                <h2>Blog</h2>
+                <div class="blog-entry">
+                    <p>20/05 Worked on realizing websites via Git, improved UI, Worked on login interface and debugging.</p>
+                    <p>Ideas to work on these days:</p>
+                    <ul>
+                        <li>Debugging Sign-Out button to set login to false and redirect to portfolio/login.html</li>
+                        <li>Change UI to make it look more professional</li>
+                        <li>Edit text, add weekly budget, and find a way to easily keep track of expenses</li>
+                    </ul>
+                </div>
+                <div class="comment-section">
+                    <h3>Comments</h3>
+                    <input type="text" id="commentInput" placeholder="Add a comment">
+                    <button onclick="addComment()">Post</button>
+                    <div id="comments"></div>
+                </div>
+            </div>
+        </div>
+        <div class="image-container right">
+            <img id="right-image" src="images/right1.jpg" alt="Right Image" class="side-image">
+        </div>
+        <button id="logoutButton" class="button logout" onclick="logout()">Sign Out</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
