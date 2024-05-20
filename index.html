@@ -1,37 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
+            text-align: center;
+        }
+        #dashboard {
+            margin-top: 50px;
+        }
+        button {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 15px;
+            font-size: 16px;
+            background-color: orange;
+            border: none;
+            cursor: pointer;
+        }
+        #logout-btn {
+            background-color: red;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-  <div class="login-container">
-    <h1>Login</h1>
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-  </div>
-  <script src="firebase.js"></script>
-  <script>
-    import { auth, signInWithEmailAndPassword } from './firebase.js';
+    <div id="dashboard">
+        <button id="finances-btn">FINANCES</button>
+        <button id="studies-btn">STUDIES</button>
+        <button id="work-btn">WORK</button>
+        <button id="schedule-btn">SCHEDULE</button>
+        <button id="logout-btn">LOGOUT</button>
+        <p id="last-updated">Last Updated: May 20, 2024 at 12:00 PM</p>
+    </div>
 
-    function login() {
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          localStorage.setItem('loggedIn', 'true');
-          window.location.href = 'portfolio.html';
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          alert(errorMessage);
+    <script>
+        // Function to update the last updated timestamp
+        const updateTimestamp = () => {
+            const currentDate = new Date();
+            document.getElementById('last-updated').innerText = `Last Updated: ${currentDate.toLocaleString()}`;
+        };
+
+        // Function to handle logout
+        const handleLogout = () => {
+            // Clear session or token (assuming token is stored in localStorage)
+            localStorage.clear();
+            sessionStorage.clear();
+
+            // Redirect to login page (update the path to your actual login page)
+            window.location.href = 'login.html';
+        };
+
+        // Set up event listeners
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Update timestamp on page load
+            updateTimestamp();
+
+            // Attach event listener to the logout button
+            document.getElementById('logout-btn').addEventListener('click', handleLogout);
         });
-    }
-  </script>
+    </script>
 </body>
 </html>
