@@ -222,3 +222,75 @@ h1 {
     text-decoration: none;
     border-radius: 5px;
 }
+
+/* Additional styles for work page */
+.work-section {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #333333;
+}
+
+.work-box {
+    background-color: #444444;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.salary-analysis, .weekly-calendar, .contract-details, .savings-analysis {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #555555;
+}
+
+.salary-analysis h2, .weekly-calendar h2, .contract-details h2, .savings-analysis h2 {
+    color: #FFA500;
+}
+
+.salary-analysis p, .contract-details p, .savings-analysis p, .savings-analysis ul {
+    color: #FFFFFF;
+}
+
+.salary-analysis ul, .savings-analysis ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.salary-analysis ul li, .savings-analysis ul li {
+    background-color: #666666;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+.weekly-calendar table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.weekly-calendar th, .weekly-calendar td {
+    border: 1px solid #FFFFFF;
+    padding: 10px;
+    text-align: center;
+    background-color: #777777;
+}
+
+.navigation {
+    margin-top: 20px;
+}
+
+.button.home {
+    background-color: #FFFFFF;
+    color: #000000;
+    margin: 20px 0;
+}
+
+.datetime {
+    margin-top: 20px;
+    color: #FFA500;
+    font-size: 1.2em;
+}
