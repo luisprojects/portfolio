@@ -3,30 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>My Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="content">
-    Welcome to the protected page!
-    <button id="logoutBtn">Logout</button>
+  <div class="navigation-container">
+    <div class="navigation">
+      <a href="finances.html" class="button finances">Finances</a>
+      <a href="studies.html" class="button studies">Studies</a>
+      <a href="work.html" class="button work">Work</a>
+      <a href="schedule.html" class="button schedule">Schedule</a>
+    </div>
   </div>
-  <script type="module">
-    import { auth, signOut } from './firebase.js';
 
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-      signOut(auth).then(() => {
-        localStorage.removeItem('loggedIn');
-        window.location.href = 'login.html';
-      }).catch((error) => {
-        console.error('Sign Out Error', error);
-      });
-    });
+  <div class="logout-container">
+    <button id="logout-button" class="logout-button">Logout</button>
+  </div>
 
+  <script src="firebase.js" type="module"></script>
+  <script src="script.js"></script>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
       if (localStorage.getItem('loggedIn') !== 'true') {
         window.location.href = 'login.html';
       }
+
+      document.getElementById('logout-button').addEventListener('click', function() {
+        import('./firebase.js').then(module => {
+          module.logoutUser();
+        });
+      });
     });
   </script>
 </body>

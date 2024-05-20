@@ -1,46 +1,40 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+// Firebase configuration and initialization
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDgUAojmCBprTeY7_o3xGnDhDuPxOPvD_g",
-  authDomain: "portfolio-3014b.firebaseapp.com",
-  projectId: "portfolio-3014b",
-  storageBucket: "portfolio-3014b.appspot.com",
-  messagingSenderId: "764292816862",
-  appId: "1:764292816862:web:4e6fa598a3fc7b774ec74f",
-  measurementId: "G-F9J431P1SW"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Handle login
-const loginForm = document.getElementById('loginForm');
-if (loginForm) {
-  loginForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        localStorage.setItem('loggedIn', 'true');
-        window.location.href = 'index.html';
-      })
-      .catch((error) => {
-        document.getElementById('error-message').textContent = 'Invalid email or password';
-      });
-  });
-}
-
-// Check authentication state
-onAuthStateChanged(auth, (user) => {
-  if (!user) {
-    if (!window.location.href.includes('login.html')) {
+// Check for user authentication state
+document.addEventListener('DOMContentLoaded', function() {
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      // User is signed in
+      localStorage.setItem('loggedIn', 'true');
+    } else {
+      // User is signed out
+      localStorage.removeItem('loggedIn');
       window.location.href = 'login.html';
     }
-  }
+  });
+
+  // Logout button functionality
+  document.getElementById('logout-button').addEventListener('click', function() {
+    signOut(auth).then(() => {
+      localStorage.removeItem('loggedIn');
+      window.location.href = 'login.html';
+    }).catch((error) => {
+      console.error('Sign Out Error', error);
+    });
+  });
 });
