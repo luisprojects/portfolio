@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+import { initializeApp } from "firebase/app";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -15,4 +16,30 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const analytics = getAnalytics(app);
+
+// Login function
+function login(email, password) {
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      localStorage.setItem('loggedIn', 'true');
+      window.location.href = 'index.html';
+    })
+    .catch((error) => {
+      console.error(error.message);
+      alert('Login failed: ' + error.message);
+    });
+}
+
+// Logout function
+function logout() {
+  signOut(auth).then(() => {
+    localStorage.removeItem('loggedIn');
+    window.location.href = 'login.html';
+  }).catch((error) => {
+    console.error(error.message);
+  });
+}
+
+export { login, logout };
