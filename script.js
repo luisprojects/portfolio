@@ -30,36 +30,6 @@ function logout() {
     });
 }
 
-// Image rotation logic
-const leftImages = [
-    'images/left1.jpg',
-    'images/left2.jpg',
-    'images/left3.jpg',
-    'images/left4.jpg',
-    'images/left5.jpg'
-];
-
-const rightImages = [
-    'images/right1.jpg',
-    'images/right2.jpg',
-    'images/right3.jpg',
-    'images/right4.jpg',
-    'images/right5.jpg'
-];
-
-let leftIndex = 0;
-let rightIndex = 0;
-
-function rotateImages() {
-    leftIndex = (leftIndex + 1) % leftImages.length;
-    rightIndex = (rightIndex + 1) % rightImages.length;
-
-    document.getElementById('left-image').src = leftImages[leftIndex];
-    document.getElementById('right-image').src = rightImages[rightIndex];
-}
-
-setInterval(rotateImages, 5000); // Change images every 5 seconds
-
 // Add comment logic
 function addComment() {
     const commentInput = document.getElementById('commentInput');
