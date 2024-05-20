@@ -32,20 +32,8 @@ function login() {
     });
 }
 
-// Logout function
-function logout() {
-  auth.signOut().then(() => {
-    // Clear login state in localStorage
-    localStorage.removeItem('loggedIn');
-    window.location.href = 'login.html';
-  }).catch((error) => {
-    console.error('Logout error:', error.message);
-  });
-}
-
-// Add event listeners for login and logout
+// Add event listener for login
 document.getElementById('loginButton')?.addEventListener('click', login);
-document.getElementById('logoutButton')?.addEventListener('click', logout);
 
 document.addEventListener('DOMContentLoaded', function() {
   if (localStorage.getItem('loggedIn') !== 'true' && window.location.pathname !== '/login.html') {
