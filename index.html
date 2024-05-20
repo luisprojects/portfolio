@@ -5,27 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="firebase.js" type="module" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Welcome to My Portfolio</h1>
-            <p>Your central hub for work, finances, studies, and schedule</p>
-        </header>
-        <nav class="navigation">
-            <a href="finances.html" class="button finances">Finances</a>
-            <a href="studies.html" class="button studies">Studies</a>
-            <a href="work.html" class="button work">Work</a>
-            <a href="schedule.html" class="button schedule">Schedule</a>
-        </nav>
+        <h1>Welcome to My Portfolio</h1>
+        <div class="navigation">
+            <a href="finances.html" class="button">Finances</a>
+            <a href="studies.html" class="button">Studies</a>
+            <a href="work.html" class="button">Work</a>
+            <a href="schedule.html" class="button">Schedule</a>
+        </div>
+        <div class="datetime">
+            <span id="date"></span>
+            <span id="time"></span>
+        </div>
+        <button onclick="logout()" class="button logout">Sign Out</button>
         <footer>
-            <p>Last updated: <span id="last-updated"></span></p>
+            <p>Last updated: <span id="lastUpdated"></span></p>
         </footer>
     </div>
-    <script src="script.js"></script>
-    <script>
-        // Set the last updated date
-        document.getElementById('last-updated').textContent = new Date().toLocaleDateString();
-    </script>
 </body>
 </html>

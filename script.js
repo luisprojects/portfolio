@@ -1,42 +1,36 @@
-import { auth } from './firebase.js';
-import { signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
 
-// Handle login
-const loginForm = document.getElementById('login-form');
-if (loginForm) {
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+document.addEventListener('DOMContentLoaded', function () {
+    const auth = getAuth();
 
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in
-                const user = userCredential.user;
-                localStorage.setItem('loggedIn', 'true');
-                window.location.href = 'index.html';
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                alert('Error: ' + errorMessage);
-            });
-    });
-}
-
-// Handle logout
-window.logout = () => {
-    signOut(auth).then(() => {
-        localStorage.removeItem('loggedIn');
-        window.location.href = 'login.html';
-    }).catch((error) => {
-        alert('Error: ' + error.message);
-    });
-};
-
-// Check login status on page load
-document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem('loggedIn') !== 'true') {
         window.location.href = 'login.html';
     }
+
+    const dateElement = document.getElementById('date');
+    const timeElement = document.getElementById('time');
+    const lastUpdatedElement = document.getElementById('lastUpdated');
+
+    function updateDateTime() {
+        const now = new Date();
+        dateElement.textContent = now.toLocaleDateString();
+        timeElement.textContent = now.toLocaleTimeString();
+    }
+
+    function updateLastUpdated() {
+        lastUpdatedElement.textContent = new Date(document.lastModified).toLocaleString();
+    }
+
+    updateDateTime();
+    updateLastUpdated();
+    setInterval(updateDateTime, 1000);
+
+    document.getElementById('logout').addEventListener('click', function () {
+        signOut(auth).then(() => {
+            localStorage.removeItem('loggedIn');
+            window.location.href = 'login.html';
+        }).catch((error) => {
+            console.error('Sign out error:', error);
+        });
+    });
 });
