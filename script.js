@@ -1,6 +1,7 @@
-// Firebase configuration and initialization
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
-import { getAuth, signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js';
+// Firebase initialization
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
+import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDgUAojmCBprTeY7_o3xGnDhDuPxOPvD_g",
@@ -12,63 +13,54 @@ const firebaseConfig = {
     measurementId: "G-F9J431P1SW"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 const auth = getAuth(app);
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Check if user is logged in
-    if (localStorage.getItem('loggedIn') !== 'true') {
-        window.location.href = 'login.html';
-    }
-
-    // Display the current date and time
-    const dateElement = document.getElementById('date');
-    const timeElement = document.getElementById('time');
-    setInterval(() => {
-        const now = new Date();
-        dateElement.textContent = now.toLocaleDateString();
-        timeElement.textContent = now.toLocaleTimeString();
-    }, 1000);
-});
-
-// Login function
-function login() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Successful login
-            localStorage.setItem('loggedIn', 'true');
-            window.location.href = 'index.html';
-        })
-        .catch((error) => {
-            console.error('Error logging in:', error);
-            alert('Invalid login credentials. Please try again.');
-        });
-}
-
-// Logout function
+// Log out function
 function logout() {
     signOut(auth).then(() => {
         localStorage.setItem('loggedIn', 'false');
         window.location.href = 'login.html';
     }).catch((error) => {
-        console.error('Error logging out:', error);
+        console.error("Sign out error:", error);
     });
 }
 
-// Add a comment function for the blog
-function addComment() {
-    const commentInput = document.getElementById('commentInput');
-    const commentsDiv = document.getElementById('comments');
+// Check login status
+document.addEventListener('DOMContentLoaded', function () {
+    if (localStorage.getItem('loggedIn') !== 'true') {
+        window.location.href = 'login.html';
+    }
 
-    const newComment = document.createElement('p');
-    newComment.textContent = commentInput.value;
-    commentsDiv.appendChild(newComment);
+    loadComments();
+});
 
-    commentInput.value = '';
+// Add comment
+document.getElementById('commentForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const commentInput = document.getElementById('commentInput').value;
+    try {
+        await addDoc(collection(db, 'comments'), {
+            text: commentInput,
+            timestamp: new Date()
+        });
+        document.getElementById('commentInput').value = '';
+        loadComments();
+    } catch (e) {
+        console.error("Error adding document: ", e);
+    }
+});
+
+// Load comments
+async function loadComments() {
+    const commentsContainer = document.getElementById('comments');
+    commentsContainer.innerHTML = '';
+    const querySnapshot = await getDocs(collection(db, 'comments'));
+    querySnapshot.forEach((doc) => {
+        const comment = document.createElement('div');
+        comment.classList.add('comment');
+        comment.textContent = doc.data().text;
+        commentsContainer.appendChild(comment);
+    });
 }
-
-export { login, logout, addComment };
