@@ -5,34 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-<<<<<<< HEAD
-    <script defer src="script.js"></script>
-=======
-    <script src="firebase.js" type="module" defer></script>
-    <script src="script.js" defer></script>
->>>>>>> origin/main
 </head>
 <body>
     <div class="container">
         <h1>Welcome to My Portfolio</h1>
-<<<<<<< HEAD
-        <div class="buttons">
-=======
         <div class="navigation">
->>>>>>> origin/main
             <a href="finances.html" class="button">Finances</a>
             <a href="studies.html" class="button">Studies</a>
             <a href="work.html" class="button">Work</a>
             <a href="schedule.html" class="button">Schedule</a>
-<<<<<<< HEAD
             <button onclick="logout()" class="button">Sign Out</button>
         </div>
-        <div class="about-me">
-            <h2>About Me</h2>
-            <p>Hello! I'm Luis, a student of AI and an aspiring professional in the tech world. I love working on diverse projects that challenge my skills and creativity. Welcome to my portfolio!</p>
-        </div>
+        <h2>About Me</h2>
+        <p>Hello! I'm Luis, a student of AI and an aspiring professional in the tech world. I love working on diverse projects that challenge my skills and creativity. Welcome to my portfolio!</p>
+        <h2>Featured Projects</h2>
         <div class="projects">
-            <h2>Featured Projects</h2>
             <div class="project">
                 <h3>Project 1</h3>
                 <p>A brief description of Project 1. <a href="#">Read more</a></p>
@@ -42,32 +29,18 @@
                 <p>A brief description of Project 2. <a href="#">Read more</a></p>
             </div>
         </div>
-        <div class="skills">
-            <h2>Skills & Technologies</h2>
-            <ul>
-                <li>HTML & CSS</li>
-                <li>JavaScript</li>
-                <li>Firebase</li>
-                <li>Node.js</li>
-            </ul>
-        </div>
-        <p>Last updated: <span id="last-updated"></span></p>
+        <h2>Skills & Technologies</h2>
+        <ul>
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+            <li>Firebase</li>
+            <li>Node.js</li>
+        </ul>
+        <p>Last updated: <span id="lastUpdated"></span></p>
     </div>
+    <script src="script.js"></script>
     <script>
-        // Set last updated date
-        document.getElementById('last-updated').innerText = new Date().toLocaleDateString();
+        document.getElementById('lastUpdated').innerText = new Date().toLocaleDateString();
     </script>
-=======
-        </div>
-        <div class="datetime">
-            <span id="date"></span>
-            <span id="time"></span>
-        </div>
-        <button onclick="logout()" class="button logout">Sign Out</button>
-        <footer>
-            <p>Last updated: <span id="lastUpdated"></span></p>
-        </footer>
-    </div>
->>>>>>> origin/main
 </body>
 </html>
