@@ -1,7 +1,4 @@
 // Firebase configuration
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-
 const firebaseConfig = {
   apiKey: "AIzaSyDgUAojmCBprTeY7_o3xGnDhDuPxOPvD_g",
   authDomain: "portfolio-3014b.firebaseapp.com",
@@ -13,15 +10,17 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the auth service
+const auth = firebase.auth();
 
 // Login function
 function login() {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
-  signInWithEmailAndPassword(auth, email, password)
+  auth.signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Store login state in localStorage
       localStorage.setItem('loggedIn', 'true');
@@ -35,7 +34,7 @@ function login() {
 
 // Logout function
 function logout() {
-  signOut(auth).then(() => {
+  auth.signOut().then(() => {
     // Clear login state in localStorage
     localStorage.removeItem('loggedIn');
     window.location.href = 'login.html';
