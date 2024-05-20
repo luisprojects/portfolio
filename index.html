@@ -5,100 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="firebase.js" defer></script>
-    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
         <h1>My Portfolio</h1>
-        <button class="logout-button" onclick="logout()">Sign Out</button>
 
-        <div class="navigation">
-            <a href="finances.html" class="button finances">FINANCES</a>
-            <a href="studies.html" class="button studies">STUDIES</a>
-            <a href="work.html" class="button work">WORK</a>
-            <a href="schedule.html" class="button schedule">SCHEDULE</a>
+        <div class="navigation-container">
+            <div class="navigation">
+                <a href="finances.html" class="button finances">Finances</a>
+                <a href="studies.html" class="button studies">Studies</a>
+                <a href="work.html" class="button work">Work</a>
+                <a href="schedule.html" class="button schedule">Schedule</a>
+            </div>
         </div>
 
-        <section class="about-me section">
+        <div class="datetime">
+            <span id="date"></span>
+            <span id="time"></span>
+            <button class="sign-out-button" onclick="logout()">Sign Out</button>
+        </div>
+
+        <div class="about-me section">
             <h2>About Me</h2>
-            <p>My name is Luis Noguera, and I’m from Palma de Mallorca. I am currently a third-year Artificial Intelligence student at Vrije Universiteit Amsterdam. I have a deep passion for technology and problem-solving, which aligns perfectly with my academic background and career goals.</p>
-            <p>In my free time, I enjoy staying updated with the latest tech trends, working on personal projects, and exploring new places. I'm always eager to learn and grow both personally and professionally.</p>
-        </section>
+            <div class="box">
+                <p>My name is Luis, from Mallorca but I live, study, and work here in Amsterdam. I work in a Mexican restaurant called SalsaShop, which is similar to Chipotle. I study AI at VU University (third year). My sister lives in Amsterdam too, and we meet every week and do various activities like going to the movies, sunbathing, or having coffee. I work a lot and study AI, which takes up a lot of my time, so I often end up studying intensely right before exams and passing. I want to find a job where I make a lot of money without having to code.</p>
+            </div>
+        </div>
 
-        <section class="education section">
-            <h2>Education</h2>
-            <ul>
-                <li>B.A in Artificial Intelligence, Vrije Universiteit Amsterdam, Netherlands (2021 - Present)</li>
-                <li>Python 3 course, Codecademy (Completed)</li>
-                <li>SQL course, Codecademy (In Progress)</li>
-                <li>Scientific Baccalaureate, Technological Science Path, IES Josep Maria Llompart, Spain (2019 - 2021)</li>
-                <li>Exchange Study Abroad, Western Harnett HS, North Carolina, USA (2018 - 2019)</li>
-            </ul>
-        </section>
-
-        <section class="skills section">
-            <h2>Skills</h2>
-            <ul>
-                <li>Well-organized and adaptable</li>
-                <li>Collaboration-driven, team player</li>
-                <li>Great oral and written communicator</li>
-                <li>Ability to adapt to new and extraordinary situations</li>
-                <li>Proactive and always willing to learn</li>
-            </ul>
-        </section>
-
-        <section class="languages section">
-            <h2>Languages</h2>
-            <ul>
-                <li>Spanish - Native Speaker</li>
-                <li>Catalan - Native Speaker</li>
-                <li>English - Fluent (C1 Level)</li>
-            </ul>
-        </section>
-
-        <section class="work-experience section">
-            <h2>Work Experience</h2>
-            <ul>
-                <li>Shift Leader, Salsa Shop, Fall 2022 - Present</li>
-                <li>Spanish Teaching Assistant, Fall 2018 - Summer 2019</li>
-            </ul>
-        </section>
-
-        <section class="projects section">
+        <div class="projects section">
             <h2>Projects</h2>
-            <ul>
-                <li>Project 1: Still thinking</li>
-                <li>Project 2: Still thinking</li>
-                <li>Project 3: Still thinking</li>
-            </ul>
-        </section>
+            <div class="box">
+                <p>Project 1: Still thinking</p>
+                <p>Project 2: Still thinking</p>
+                <p>Project 3: Still thinking</p>
+            </div>
+        </div>
 
-        <section class="goals section">
-            <h2>Goals</h2>
-            <p>My short-term goal is to secure an internship where I can apply my knowledge and skills in a practical environment. Long-term, I aim to become a Solutions Architect, contributing to innovative projects and helping to solve complex problems.</p>
-        </section>
+        <div class="education section">
+            <h2>Education</h2>
+            <div class="box">
+                <p>Bachelor's in Artificial Intelligence, VU University Amsterdam</p>
+                <p>Expected Graduation: 2024</p>
+            </div>
+        </div>
 
-        <section class="blog section">
-            <h2>Blog</h2>
-            <div class="blog-post">
-                <h3>20/05 Worked on Realising Website via Git</h3>
-                <p>Worked on realising website via Git, improved UI, worked on login interface and debugging.</p>
-                <p>Ideas to work on these days:</p>
+        <div class="skills section">
+            <h2>Skills</h2>
+            <div class="box">
                 <ul>
-                    <li>Debugging Sign-Out button to set login to false and redirect to portfolio/login.html</li>
-                    <li>Change UI to make it look more professional</li>
-                    <li>Edit text, add weekly budget and find a way to easily keep track of expenses</li>
+                    <li>Machine Learning</li>
+                    <li>Data Analysis</li>
+                    <li>Web Development</li>
+                    <li>Python, JavaScript, HTML, CSS</li>
+                    <li>Team Collaboration</li>
+                    <li>Project Management</li>
                 </ul>
             </div>
+        </div>
 
-            <form id="commentForm">
-                <h3>Leave a Comment</h3>
-                <input type="text" id="commentInput" placeholder="Write your comment here..." required>
-                <button type="submit">Submit</button>
-            </form>
-            <div id="comments"></div>
-        </section>
+        <div class="work-experience section">
+            <h2>Work Experience</h2>
+            <div class="box">
+                <p>Position: Staff at SalsaShop, Amsterdam</p>
+                <p>Responsibilities: Customer service, food preparation, maintaining cleanliness</p>
+                <p>Duration: 2020 - Present</p>
+            </div>
+        </div>
+
+        <div class="goals section">
+            <h2>Goals</h2>
+            <div class="box">
+                <ul>
+                    <li>Short-term: Graduate with a Bachelor's in AI</li>
+                    <li>Medium-term: Secure a high-paying job</li>
+                    <li>Long-term: Purchase a house in Amsterdam</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="blog section">
+            <h2>Blog</h2>
+            <div class="box">
+                <div id="posts"></div>
+                <textarea id="postContent" placeholder="Write your post here..."></textarea>
+                <button onclick="addPost()">Submit</button>
+            </div>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

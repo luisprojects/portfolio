@@ -1,7 +1,6 @@
-// Firebase initialization
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
-import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+// Firebase Initialization
+import { initializeApp } from "firebase/app";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDgUAojmCBprTeY7_o3xGnDhDuPxOPvD_g",
@@ -14,53 +13,56 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 const auth = getAuth(app);
 
-// Log out function
+// Check authentication status
+document.addEventListener('DOMContentLoaded', function() {
+    onAuthStateChanged(auth, user => {
+        if (!user) {
+            window.location.href = 'login.html';
+        }
+    });
+
+    updateDateTime();
+});
+
+// Logout function
 function logout() {
     signOut(auth).then(() => {
-        localStorage.setItem('loggedIn', 'false');
         window.location.href = 'login.html';
-    }).catch((error) => {
-        console.error("Sign out error:", error);
+    }).catch(error => {
+        console.error("Error signing out:", error);
     });
 }
 
-// Check login status
-document.addEventListener('DOMContentLoaded', function () {
-    if (localStorage.getItem('loggedIn') !== 'true') {
-        window.location.href = 'login.html';
-    }
+// Date and Time
+function updateDateTime() {
+    const dateElement = document.getElementById('date');
+    const timeElement = document.getElementById('time');
+    const now = new Date();
 
-    loadComments();
-});
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateElement.textContent = now.toLocaleDateString(undefined, options);
 
-// Add comment
-document.getElementById('commentForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const commentInput = document.getElementById('commentInput').value;
-    try {
-        await addDoc(collection(db, 'comments'), {
-            text: commentInput,
-            timestamp: new Date()
-        });
-        document.getElementById('commentInput').value = '';
-        loadComments();
-    } catch (e) {
-        console.error("Error adding document: ", e);
-    }
-});
+    const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    timeElement.textContent = now.toLocaleTimeString(undefined, timeOptions);
 
-// Load comments
-async function loadComments() {
-    const commentsContainer = document.getElementById('comments');
-    commentsContainer.innerHTML = '';
-    const querySnapshot = await getDocs(collection(db, 'comments'));
-    querySnapshot.forEach((doc) => {
-        const comment = document.createElement('div');
-        comment.classList.add('comment');
-        comment.textContent = doc.data().text;
-        commentsContainer.appendChild(comment);
-    });
+    setTimeout(updateDateTime, 1000);
 }
+
+// Blog
+function addPost() {
+    const postContent = document.getElementById('postContent').value;
+    const postElement = document.createElement('div');
+    postElement.className = 'post';
+    postElement.textContent = postContent;
+
+    const postsContainer = document.getElementById('posts');
+    postsContainer.appendChild(postElement);
+
+    document.getElementById('postContent').value = '';
+}
+
+// Exporting functions for global access
+window.logout = logout;
+window.addPost = addPost;
