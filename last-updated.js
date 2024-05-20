@@ -2,7 +2,7 @@
 const lastUpdatedElement = document.getElementById('last-updated-date');
 
 // Set the last updated date (change this to the current date whenever you update your website)
-const lastUpdatedDate = new Date('2024-05-20T12:00:00'); // Example date, update this as needed
+const lastUpdatedDate = new Date('2024-05-20T12:30:00'); // Example date, update this as needed
 
 // Format the date to a more readable format
 const formattedDate = lastUpdatedDate.toLocaleDateString('en-US', {

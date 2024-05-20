@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="firebase.js"></script>
-    <script defer src="script.js"></script>
-    <script defer src="last-updated.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="navigation-container">
-            <div class="navigation">
-                <a href="finances.html" class="button finances">FINANCES</a>
-                <a href="studies.html" class="button studies">STUDIES</a>
-                <a href="work.html" class="button work">WORK</a>
-                <a href="schedule.html" class="button schedule">SCHEDULE</a>
-            </div>
-        </div>
+  <div class="login-container">
+    <h1>Login</h1>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+  <script src="firebase.js"></script>
+  <script>
+    import { auth, signInWithEmailAndPassword } from './firebase.js';
 
-        <div class="logout-container">
-            <button id="logout-button">LOGOUT</button>
-        </div>
-
-        <div id="last-updated" class="last-updated">
-            Last Updated: <span id="last-updated-date"></span>
-        </div>
-    </div>
+    function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          localStorage.setItem('loggedIn', 'true');
+          window.location.href = 'portfolio.html';
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(errorMessage);
+        });
+    }
+  </script>
 </body>
 </html>
