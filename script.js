@@ -1,8 +1,8 @@
-<<<<<<< HEAD
-// Firebase initialization and authentication logic
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDgUAojmCBprTeY7_o3xGnDhDuPxOPvD_g",
     authDomain: "portfolio-3014b.firebaseapp.com",
@@ -13,58 +13,61 @@ const firebaseConfig = {
     measurementId: "G-F9J431P1SW"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+const db = getFirestore(app);
 
-document.addEventListener('DOMContentLoaded', function() {
-    if (localStorage.getItem('loggedIn') !== 'true') {
-        window.location.href = 'login.html';
+// Check if user is logged in
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        window.location.href = "login.html";
     }
 });
 
+// Logout function
 function logout() {
     signOut(auth).then(() => {
-        localStorage.removeItem('loggedIn');
-        window.location.href = 'login.html';
+        window.location.href = "login.html";
     }).catch((error) => {
-        console.error('Sign Out Error', error);
+        console.error("Error signing out: ", error);
     });
 }
-=======
-import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
 
-document.addEventListener('DOMContentLoaded', function () {
-    const auth = getAuth();
+document.getElementById("logout-btn").addEventListener("click", logout);
 
-    if (localStorage.getItem('loggedIn') !== 'true') {
-        window.location.href = 'login.html';
-    }
-
-    const dateElement = document.getElementById('date');
-    const timeElement = document.getElementById('time');
-    const lastUpdatedElement = document.getElementById('lastUpdated');
-
-    function updateDateTime() {
-        const now = new Date();
-        dateElement.textContent = now.toLocaleDateString();
-        timeElement.textContent = now.toLocaleTimeString();
-    }
-
-    function updateLastUpdated() {
-        lastUpdatedElement.textContent = new Date(document.lastModified).toLocaleString();
-    }
-
-    updateDateTime();
-    updateLastUpdated();
-    setInterval(updateDateTime, 1000);
-
-    document.getElementById('logout').addEventListener('click', function () {
-        signOut(auth).then(() => {
-            localStorage.removeItem('loggedIn');
-            window.location.href = 'login.html';
-        }).catch((error) => {
-            console.error('Sign out error:', error);
+// Add comment
+document.getElementById("comment-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const commentInput = document.getElementById("comment-input");
+    const comment = commentInput.value;
+    try {
+        await addDoc(collection(db, "comments"), {
+            text: comment,
+            timestamp: new Date()
         });
-    });
+        commentInput.value = "";
+        loadComments();
+    } catch (e) {
+        console.error("Error adding comment: ", e);
+    }
 });
->>>>>>> origin/main
+
+// Load comments
+async function loadComments() {
+    const commentsDiv = document.getElementById("comments");
+    commentsDiv.innerHTML = "";
+    const querySnapshot = await getDocs(collection(db, "comments"));
+    querySnapshot.forEach((doc) => {
+        const commentData = doc.data();
+        const commentElement = document.createElement("p");
+        commentElement.textContent = commentData.text;
+        commentsDiv.appendChild(commentElement);
+    });
+}
+
+// Load comments on page load
+document.addEventListener("DOMContentLoaded", loadComments);
+
+// Update last updated date
+document.getElementById("last-updated").textContent = new Date().toLocaleDateString();
