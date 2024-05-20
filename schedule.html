@@ -3,189 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Schedule</title>
+    <title>Schedule</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>My Schedule</h1>
-        <div class="schedule-section">
-            <div class="calendar">
+        <div class="header">
+            <a href="index.html" class="button home">Home</a>
+        </div>
+        <h1>Schedule</h1>
+        <div class="content">
+            <div class="section">
+                <h2>Weekly Schedule</h2>
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Time</th>
-                            <th>Monday</th>
-                            <th>Tuesday</th>
-                            <th>Wednesday</th>
-                            <th>Thursday</th>
-                            <th>Friday</th>
-                            <th>Saturday</th>
-                            <th>Sunday</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>8:00 - 9:00</td>
-                            <td class="get-ready">Get Ready</td>
-                            <td class="get-ready">Get Ready</td>
-                            <td class="get-ready">Get Ready</td>
-                            <td class="get-ready">Get Ready</td>
-                            <td class="get-ready">Get Ready</td>
-                            <td class="get-ready">Get Ready</td>
-                            <td class="free-time">Free Day</td>
-                        </tr>
-                        <tr>
-                            <td>9:00 - 10:00</td>
-                            <td class="travel">Travel to Library</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="travel">Travel to Library</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="travel">Travel to Work</td>
-                            <td class="free-time">Free Day</td>
-                        </tr>
-                        <tr>
-                            <td>10:00 - 11:00</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Day</td>
-                        </tr>
-                        <tr>
-                            <td>11:00 - 12:00</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Day</td>
-                        </tr>
-                        <tr>
-                            <td>12:00 - 1:00</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Day</td>
-                        </tr>
-                        <tr>
-                            <td>1:00 - 2:00</td>
-                            <td class="break">Lunch Break</td>
-                            <td class="break">Lunch Break</td>
-                            <td class="break">Lunch Break</td>
-                            <td class="break">Lunch Break</td>
-                            <td class="break">Lunch Break</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Day</td>
-                        </tr>
-                        <tr>
-                            <td>2:00 - 3:00</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Day</td>
-                        </tr>
-                        <tr>
-                            <td>3:00 - 4:00</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="work">Work</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="work">Work</td>
-                            <td class="work">Work</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Day</td>
-                        </tr>
-                        <tr>
-                            <td>4:00 - 5:00</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="work">Work</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="work">Work</td>
-                            <td class="work">Work</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Day</td>
-                        </tr>
-                        <tr>
-                            <td>5:00 - 6:00</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="work">Work</td>
-                            <td class="study-session">Study Session</td>
-                            <td class="work">Work</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="na-meeting">NA Meeting</td>
-                        </tr>
-                        <tr>
-                            <td>6:00 - 7:00</td>
-                            <td class="break">Dinner Break</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="work">Work</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="free-time">Free Day</td>
-                        </tr>
-                        <tr>
-                            <td>7:00 - 8:00</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="work">Work</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="free-time">Free Day</td>
-                        </tr>
-                        <tr>
-                            <td>8:00 - 9:00</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="work">Work</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="free-time">Free Day</td>
-                        </tr>
-                        <tr>
-                            <td>9:00 - 10:00</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="work">Work</td>
-                            <td class="work">Work</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="free-time">Free Day</td>
-                        </tr>
-                        <tr>
-                            <td>10:00 - 11:00</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="free-time">Free Time</td>
-                            <td class="free-time">Free Day</td>
-                        </tr>
-                    </tbody>
+                    <tr>
+                        <th>Day</th>
+                        <th>Activity</th>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td>
+                            <ul>
+                                <li>8:00 AM - Get Ready</li>
+                                <li>9:00 AM - Travel to Library</li>
+                                <li>10:00 AM - Study Session 1 (History of Science)</li>
+                                <li>11:00 AM - Break</li>
+                                <li>11:10 AM - Study Session 2 (Linear Algebra)</li>
+                                <li>12:00 PM - Break</li>
+                                <li>12:10 PM - Study Session 3 (Philosophy and Ethics)</li>
+                                <li>1:00 PM - Lunch Break</li>
+                                <li>2:00 PM - Study Session 4 (History of Science)</li>
+                                <li>3:00 PM - Break</li>
+                                <li>3:10 PM - Study Session 5 (Linear Algebra)</li>
+                                <li>4:00 PM - Break</li>
+                                <li>4:10 PM - Study Session 6 (Philosophy and Ethics)</li>
+                                <li>5:00 PM - Free Time</li>
+                                <li>6:00 PM - Study Session 7 (History of Science)</li>
+                                <li>7:00 PM - Break</li>
+                                <li>7:10 PM - Study Session 8 (Linear Algebra)</li>
+                                <li>8:00 PM - Break</li>
+                                <li>8:10 PM - Study Session 9 (Philosophy and Ethics)</li>
+                                <li>9:00 PM - Work on Website Code</li>
+                                <li>10:30 PM - Research WorkAway</li>
+                                <li>11:30 PM - End of Day</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>
+                            <ul>
+                                <li>8:00 AM - Get Ready</li>
+                                <li>9:00 AM - Travel to Library</li>
+                                <li>10:00 AM - Study Session 1 (Linear Algebra)</li>
+                                <li>11:00 AM - Break</li>
+                                <li>11:10 AM - Study Session 2 (History of Science)</li>
+                                <li>12:00 PM - Break</li>
+                                <li>12:10 PM - Study Session 3 (Philosophy and Ethics)</li>
+                                <li>1:00 PM - Lunch Break</li>
+                                <li>2:00 PM - Study Session 4 (Linear Algebra)</li>
+                                <li>3:00 PM - Work</li>
+                                <li>10:00 PM - Free Time</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>
+                            <ul>
+                                <li>8:00 AM - Get Ready</li>
+                                <li>9:00 AM - Travel to Library</li>
+                                <li>10:00 AM - Study Session 1 (History of Science)</li>
+                                <li>11:00 AM - Break</li>
+                                <li>11:10 AM - Study Session 2 (Linear Algebra)</li>
+                                <li>12:00 PM - Break</li>
+                                <li>12:10 PM - Study Session 3 (Philosophy and Ethics)</li>
+                                <li>1:00 PM - Lunch Break</li>
+                                <li>2:00 PM - Study Session 4 (History of Science)</li>
+                                <li>3:00 PM - Break</li>
+                                <li>3:10 PM - Study Session 5 (Linear Algebra)</li>
+                                <li>4:00 PM - Therapy</li>
+                                <li>5:00 PM - Free Time</li>
+                                <li>7:30 PM - Free Time</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>
+                            <ul>
+                                <li>8:00 AM - Get Ready</li>
+                                <li>9:00 AM - Travel to Library</li>
+                                <li>10:00 AM - Study Session 1 (Philosophy and Ethics)</li>
+                                <li>11:00 AM - Break</li>
+                                <li>11:10 AM - Study Session 2 (History of Science)</li>
+                                <li>12:00 PM - Break</li>
+                                <li>12:10 PM - Study Session 3 (Linear Algebra)</li>
+                                <li>1:00 PM - Lunch Break</li>
+                                <li>2:00 PM - Study Session 4 (Philosophy and Ethics)</li>
+                                <li>3:00 PM - Work</li>
+                                <li>10:00 PM - Free Time</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>
+                            <ul>
+                                <li>8:00 AM - Get Ready</li>
+                                <li>9:00 AM - Travel to Library</li>
+                                <li>10:00 AM - Study Session 1 (Linear Algebra)</li>
+                                <li>11:00 AM - Break</li>
+                                <li>11:10 AM - Study Session 2 (Philosophy and Ethics)</li>
+                                <li>12:00 PM - Break</li>
+                                <li>12:10 PM - Study Session 3 (History of Science)</li>
+                                <li>1:00 PM - Lunch Break</li>
+                                <li>2:00 PM - Study Session 4 (Linear Algebra)</li>
+                                <li>3:00 PM - Work</li>
+                                <li>10:00 PM - Free Time</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>
+                            <ul>
+                                <li>8:00 AM - Get Ready</li>
+                                <li>9:00 AM - Travel to Work</li>
+                                <li>10:00 AM - Work</li>
+                                <li>5:00 PM - Free Time</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>
+                            <ul>
+                                <li>8:00 AM - Free Time</li>
+                                <li>5:00 PM - NA Meeting</li>
+                                <li>6:00 PM - Free Time</li>
+                            </ul>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
-        <div class="navigation">
-            <a href="index.html" class="button home">Home</a>
-        </div>
-        <div class="datetime">
-            <span id="date"></span>
-            <span id="time"></span>
-        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
