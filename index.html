@@ -1,39 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="firebase.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="navigation-container">
-    <div class="navigation">
-      <a href="finances.html" class="button finances">Finances</a>
-      <a href="studies.html" class="button studies">Studies</a>
-      <a href="work.html" class="button work">Work</a>
-      <a href="schedule.html" class="button schedule">Schedule</a>
+    <div class="navigation-container">
+        <div class="navigation">
+            <a href="finances.html" class="button finances">Finances</a>
+            <a href="studies.html" class="button studies">Studies</a>
+            <a href="work.html" class="button work">Work</a>
+            <a href="schedule.html" class="button schedule">Schedule</a>
+        </div>
     </div>
-  </div>
 
-  <div class="logout-container">
-    <button id="logout-button" class="logout-button">Logout</button>
-  </div>
-
-  <script src="firebase.js" type="module"></script>
-  <script src="script.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      if (localStorage.getItem('loggedIn') !== 'true') {
-        window.location.href = 'login.html';
-      }
-
-      document.getElementById('logout-button').addEventListener('click', function() {
-        import('./firebase.js').then(module => {
-          module.logoutUser();
-        });
-      });
-    });
-  </script>
+    <div class="logout-container">
+        <button id="logout-button">Logout</button>
+    </div>
 </body>
 </html>
