@@ -9,14 +9,14 @@
 <body>
     <div class="login-container">
         <h1>Login</h1>
-        <form id="login-form">
+        <form id="loginForm">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <button type="submit">Login</button>
         </form>
-        <p id="login-error" style="color: red; display: none;">Incorrect username or password</p>
+        <p id="errorMsg" class="hidden">Incorrect username or password. Please try again.</p>
     </div>
     <script src="script.js"></script>
 </body>

@@ -1,26 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const loginForm = document.getElementById('login-form');
+    const loginForm = document.getElementById('loginForm');
+    const errorMsg = document.getElementById('errorMsg');
 
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = loginForm.username.value;
+        const password = loginForm.password.value;
 
-            // Set your own username and password
-            const validUsername = 'your-username';
-            const validPassword = 'your-password';
+        // Replace with your actual credentials
+        const validUsername = 'yourUsername';
+        const validPassword = 'yourPassword';
 
-            if (username === validUsername && password === validPassword) {
-                localStorage.setItem('loggedIn', 'true');
-                window.location.href = 'index.html';
-            } else {
-                document.getElementById('login-error').style.display = 'block';
-            }
-        });
-    } else {
-        if (localStorage.getItem('loggedIn') !== 'true') {
-            window.location.href = 'login.html';
+        if (username === validUsername && password === validPassword) {
+            localStorage.setItem('loggedIn', 'true');
+            window.location.href = 'index.html';
+        } else {
+            errorMsg.classList.remove('hidden');
         }
-    }
+    });
 });
