@@ -8,28 +8,24 @@
 </head>
 <body>
     <div class="container">
-        <h1>My Portfolio</h1>
-        <div class="navigation-container">
-            <div class="navigation">
-                <a href="finances.html" class="button finances">Finances</a>
-                <a href="studies.html" class="button studies">Studies</a>
-                <a href="work.html" class="button work">Work</a>
-                <a href="schedule.html" class="button schedule">Schedule</a>
-            </div>
-        </div>
-        <button id="logoutBtn" class="button logout">Logout</button>
+        <header>
+            <h1>Welcome to My Portfolio</h1>
+            <p>Your central hub for work, finances, studies, and schedule</p>
+        </header>
+        <nav class="navigation">
+            <a href="finances.html" class="button finances">Finances</a>
+            <a href="studies.html" class="button studies">Studies</a>
+            <a href="work.html" class="button work">Work</a>
+            <a href="schedule.html" class="button schedule">Schedule</a>
+        </nav>
+        <footer>
+            <p>Last updated: <span id="last-updated"></span></p>
+        </footer>
     </div>
+    <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (localStorage.getItem('loggedIn') !== 'true') {
-                window.location.href = 'login.html';
-            }
-
-            document.getElementById('logoutBtn').addEventListener('click', function() {
-                localStorage.removeItem('loggedIn');
-                window.location.href = 'login.html';
-            });
-        });
+        // Set the last updated date
+        document.getElementById('last-updated').textContent = new Date().toLocaleDateString();
     </script>
 </body>
 </html>

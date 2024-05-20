@@ -203,3 +203,50 @@ th, td {
 th {
     background-color: #444;
 }
+
+/* New implementations */
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.5em;
+    color: #000;
+    background-color: #ff9800;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #e68900;
+    transform: scale(1.05);
+}
+
+footer {
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #b0b0b0;
+}
+
+@media (min-width: 768px) {
+    .navigation {
+        flex-direction: row;
+    }
+
+    .button {
+        flex: 1;
+        margin: 0 10px;
+    }
+}
