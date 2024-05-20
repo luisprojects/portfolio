@@ -20,7 +20,7 @@ const auth = getAuth(app);
 const analytics = getAnalytics(app);
 
 // Login function
-function login(email, password) {
+export function login(email, password) {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       localStorage.setItem('loggedIn', 'true');
@@ -33,7 +33,7 @@ function login(email, password) {
 }
 
 // Logout function
-function logout() {
+export function logout() {
   signOut(auth).then(() => {
     localStorage.removeItem('loggedIn');
     window.location.href = 'login.html';
@@ -41,5 +41,3 @@ function logout() {
     console.error(error.message);
   });
 }
-
-export { login, logout };
