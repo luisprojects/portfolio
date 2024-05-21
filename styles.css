@@ -88,8 +88,6 @@ tbody tr:nth-child(even) {
     background-color: #2e2e2e;
 }
 
-/* Additional styles from previous updates */
-
 a {
     color: #ff9800;
     text-decoration: none;
@@ -239,7 +237,6 @@ th {
     background-color: #444;
 }
 
-/* Updated styles for index page UI improvements */
 .navigation .button {
     background-color: #fff;
     color: #000;
@@ -304,16 +301,6 @@ section h2 {
 .logout-button:hover {
     background-color: #e68900;
 }
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.container {
-    display: inline-block;
-    text-align: center;
-}
 
 #gameCanvas {
     border: 1px solid black;
@@ -347,19 +334,6 @@ button {
     background-color: #0056b3;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.container {
-    display: inline-block;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 canvas {
     width: 100%;
     height: auto;
@@ -368,38 +342,26 @@ canvas {
     border: 1px solid black;
 }
 
-.home-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 18px;
-    color: white;
-    background-color: #007BFF;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.home-button:hover {
-    background-color: #0056b3;
-}
-
 .blog-post {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #1e1e1e; /* Dark background */
+    color: #f0f0f0; /* Light text */
+    border: 1px solid #333; /* Darker border */
     border-radius: 5px;
     padding: 15px;
     margin: 20px 0;
     text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for better visibility */
 }
 
 .blog-post h3 {
     margin-top: 0;
+    color: #ff9800;
 }
 
 #commentForm {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    border: 1px solid #333;
     border-radius: 5px;
     padding: 15px;
     margin: 20px 0;
@@ -407,14 +369,17 @@ canvas {
 
 #commentForm h3 {
     margin-top: 0;
+    color: #ff9800;
 }
 
 #commentInput {
     width: calc(100% - 22px);
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #333;
     border-radius: 5px;
     margin-bottom: 10px;
+    background-color: #333;
+    color: #f0f0f0;
 }
 
 #commentForm button {
@@ -433,4 +398,5 @@ canvas {
 
 #comments {
     text-align: left;
+    color: #f0f0f0;
 }
