@@ -304,3 +304,29 @@ section h2 {
 .logout-button:hover {
     background-color: #e68900;
 }
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container {
+    display: inline-block;
+    text-align: center;
+}
+
+#gameCanvas {
+    border: 1px solid black;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#score {
+    font-size: 20px;
+    margin-top: 20px;
+}

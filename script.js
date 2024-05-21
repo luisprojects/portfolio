@@ -64,3 +64,4 @@ async function loadComments() {
         commentsContainer.appendChild(comment);
     });
 }
+
