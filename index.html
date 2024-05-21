@@ -3,107 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Snake Game</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="firebase.js" defer></script>
-    <script src="script.js" defer></script>
+    <script src="snake.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <h1>My Portfolio</h1>
-        <button class="logout-button" onclick="logout()">Sign Out</button>
-
-        <div class="navigation">
-            <a href="finances.html" class="button finances">FINANCES</a>
-            <a href="studies.html" class="button studies">STUDIES</a>
-            <a href="work.html" class="button work">WORK</a>
-            <a href="schedule.html" class="button schedule">SCHEDULE</a>
-            <a href="snake.html" class="button snake">SNAKE GAME</a>
-        </div>
-
-        <section class="about-me section">
-            <h2>About Me</h2>
-            <p>My name is Luis Noguera, and I’m from Palma de Mallorca. I am currently a third-year Artificial Intelligence student at Vrije Universiteit Amsterdam. I have a deep passion for technology and problem-solving, which aligns perfectly with my academic background and career goals.</p>
-            <p>In my free time, I enjoy staying updated with the latest tech trends, working on personal projects, and exploring new places. I'm always eager to learn and grow both personally and professionally.</p>
-        </section>
-
-        <section class="education section">
-            <h2>Education</h2>
-            <ul>
-                <li>B.A in Artificial Intelligence, Vrije Universiteit Amsterdam, Netherlands (2021 - Present)</li>
-                <li>Python 3 course, Codecademy (Completed)</li>
-                <li>SQL course, Codecademy (In Progress)</li>
-                <li>Scientific Baccalaureate, Technological Science Path, IES Josep Maria Llompart, Spain (2019 - 2021)</li>
-                <li>Exchange Study Abroad, Western Harnett HS, North Carolina, USA (2018 - 2019)</li>
-            </ul>
-        </section>
-
-        <section class="skills section">
-            <h2>Skills</h2>
-            <ul>
-                <li>Well-organized and adaptable</li>
-                <li>Collaboration-driven, team player</li>
-                <li>Great oral and written communicator</li>
-                <li>Ability to adapt to new and extraordinary situations</li>
-                <li>Proactive and always willing to learn</li>
-            </ul>
-        </section>
-
-        <section class="languages section">
-            <h2>Languages</h2>
-            <ul>
-                <li>Spanish - Native Speaker</li>
-                <li>Catalan - Native Speaker</li>
-                <li>English - Fluent (C1 Level)</li>
-            </ul>
-        </section>
-
-        <section class="work-experience section">
-            <h2>Work Experience</h2>
-            <ul>
-                <li>Shift Leader, Salsa Shop, Fall 2022 - Present</li>
-                <li>Spanish Teaching Assistant, Fall 2018 - Summer 2019</li>
-            </ul>
-        </section>
-
-        <section class="projects section">
-            <h2>Projects</h2>
-            <ul>
-                <li><strong>Project 1: Snake Game</strong> - A classic Snake game implemented using HTML, CSS, and JavaScript. <a href="snake.html">Play Snake Game</a></li>
-                <li>Project 2: Still thinking</li>
-                <li>Project 3: Still thinking</li>
-            </ul>
-        </section>
-
-        <section class="goals section">
-            <h2>Goals</h2>
-            <p>My short-term goal is to secure an internship where I can apply my knowledge and skills in a practical environment. Long-term, I aim to become a Solutions Architect, contributing to innovative projects and helping to solve complex problems.</p>
-        </section>
-
-        <section class="blog section">
-            <h2>Blog</h2>
-            <div class="blog-post">
-                <h3>21/05 Worked on Improving General Pages</h3>
-                <p>Today, we focused on enhancing the overall structure and functionality of the portfolio website. This included updating various sections and improving the user experience. A significant addition was the implementation of the classic Snake game, which was integrated seamlessly into the website. The Snake game now includes wrap-around functionality and is linked from the Projects section. Users can enjoy playing the game directly on the site.</p>
-            </div>
-            <div class="blog-post">
-                <h3>20/05 Worked on Releasing Website via Git</h3>
-                <p>Worked on realising website via Git, improved UI, worked on login interface and debugging.</p>
-                <p>Ideas to work on these days:</p>
-                <ul>
-                    <li>Debugging Sign-Out button to set login to false and redirect to portfolio/login.html</li>
-                    <li>Change UI to make it look more professional</li>
-                    <li>Edit text, add weekly budget and find a way to easily keep track of expenses</li>
-                </ul>
-            </div>
-
-            <form id="commentForm">
-                <h3>Leave a Comment</h3>
-                <input type="text" id="commentInput" placeholder="Write your comment here..." required>
-                <button type="submit">Submit</button>
-            </form>
-            <div id="comments"></div>
-        </section>
+        <h1>Snake Game</h1>
+        <p>This classic Snake game was seamlessly integrated into this website by AI in less than one minute, showcasing the power and efficiency of modern technology. Enjoy the game and see how long you can grow your snake!</p>
+        <p><strong>How to Play:</strong> Use the arrow keys on your keyboard or swipe on your touch device to move the snake. The goal is to eat the food that appears on the screen. Each time the snake eats the food, it grows longer. The game ends if the snake runs into itself. In this version, the snake wraps around the edges of the screen, so it never hits the walls.</p>
+        <canvas id="gameCanvas"></canvas>
+        <a href="index.html" class="home-button">Home</a>
     </div>
 </body>
 </html>

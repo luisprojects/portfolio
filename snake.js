@@ -2,13 +2,15 @@ const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
 const box = 32;
+canvas.width = 19 * box;
+canvas.height = 19 * box;
 
 let snake = [];
 snake[0] = { x: 9 * box, y: 10 * box };
 
 let food = {
     x: Math.floor(Math.random() * 17 + 1) * box,
-    y: Math.floor(Math.random() * 15 + 3) * box
+    y: Math.floor(Math.random() * 17 + 1) * box
 };
 
 let score = 0;
@@ -28,6 +30,41 @@ function direction(event) {
         d = "DOWN";
     }
 }
+
+// Touch controls
+let touchStartX = 0;
+let touchStartY = 0;
+
+document.addEventListener('touchstart', function(event) {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+});
+
+document.addEventListener('touchmove', function(event) {
+    if (!d) return;
+    let touchEndX = event.touches[0].clientX;
+    let touchEndY = event.touches[0].clientY;
+
+    let xDiff = touchStartX - touchEndX;
+    let yDiff = touchStartY - touchEndY;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (xDiff > 0 && d !== "RIGHT") {
+            d = "LEFT";
+        } else if (xDiff < 0 && d !== "LEFT") {
+            d = "RIGHT";
+        }
+    } else {
+        if (yDiff > 0 && d !== "DOWN") {
+            d = "UP";
+        } else if (yDiff < 0 && d !== "UP") {
+            d = "DOWN";
+        }
+    }
+
+    touchStartX = 0;
+    touchStartY = 0;
+});
 
 function collision(head, array) {
     for (let i = 0; i < array.length; i++) {
@@ -63,17 +100,17 @@ function draw() {
     if (d === "DOWN") snakeY += box;
 
     // Wrap snake position horizontally on edge collision
-    if (snakeX < 0) snakeX = 17 * box;
-    if (snakeX > 17 * box) snakeX = 0;
+    if (snakeX < 0) snakeX = canvas.width - box;
+    if (snakeX >= canvas.width) snakeX = 0;
     // Wrap snake position vertically on edge collision
-    if (snakeY < 3 * box) snakeY = 17 * box;
-    if (snakeY > 17 * box) snakeY = 3 * box;
+    if (snakeY < 0) snakeY = canvas.height - box;
+    if (snakeY >= canvas.height) snakeY = 0;
 
     if (snakeX === food.x && snakeY === food.y) {
         score++;
         food = {
             x: Math.floor(Math.random() * 17 + 1) * box,
-            y: Math.floor(Math.random() * 15 + 3) * box
+            y: Math.floor(Math.random() * 17 + 1) * box
         };
     } else {
         snake.pop();
