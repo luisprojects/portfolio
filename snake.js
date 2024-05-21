@@ -56,8 +56,10 @@ function draw() {
     if (d === 'RIGHT') snakeX += box;
     if (d === 'DOWN') snakeY += box;
 
+    // Wrap snake position horizontally on edge collision
     if (snakeX < 0) snakeX = canvas.width - box;
     if (snakeX >= canvas.width) snakeX = 0;
+    // Wrap snake position vertically on edge collision
     if (snakeY < 0) snakeY = canvas.height - box;
     if (snakeY >= canvas.height) snakeY = 0;
 
