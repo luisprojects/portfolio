@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Ideas</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="project-ideas.js" defer></script>
+    <script type="module" src="project-ideas.js" defer></script>
     <style>
         body {
             background-color: #ffffff;
@@ -65,6 +65,7 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
         }
 
         .idea {
@@ -105,6 +106,35 @@
         .home-button:hover {
             background-color: #0056b3;
         }
+
+        .section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #28a745;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .section ul li {
+            margin-bottom: 10px;
+            color: #555;
+        }
     </style>
 </head>
 <body>
@@ -119,6 +149,7 @@
             <textarea id="ideaImplementation" rows="4" required></textarea>
             <button type="submit">Submit</button>
         </form>
+
         <div id="ideasContainer">
             <h2>Submitted Ideas</h2>
             <div class="idea">
@@ -136,8 +167,75 @@
                 <p><strong>Description:</strong> Develop a personal finance tracker to help users manage their expenses and savings.</p>
                 <p><strong>Implementation:</strong> Use a combination of frontend and backend technologies to build a secure and user-friendly tracker.</p>
             </div>
-            <!-- More sample ideas can be added here -->
+            <div class="idea">
+                <h3>Health Monitoring System</h3>
+                <p><strong>Description:</strong> Build a system to monitor and track vital health statistics for patients remotely.</p>
+                <p><strong>Implementation:</strong> Use IoT devices to collect data and a web application to display the statistics.</p>
+            </div>
+            <div class="idea">
+                <h3>Weather Forecasting App</h3>
+                <p><strong>Description:</strong> Create a mobile app that provides real-time weather updates and forecasts.</p>
+                <p><strong>Implementation:</strong> Use a weather API to fetch data and display it in a user-friendly interface.</p>
+            </div>
+            <div class="idea">
+                <h3>Language Learning Platform</h3>
+                <p><strong>Description:</strong> Develop a platform to help users learn new languages through interactive lessons and quizzes.</p>
+                <p><strong>Implementation:</strong> Use spaced repetition algorithms and gamification techniques to enhance learning.</p>
+            </div>
+            <div class="idea">
+                <h3>Recipe Sharing Community</h3>
+                <p><strong>Description:</strong> Build a website where users can share and discover new recipes.</p>
+                <p><strong>Implementation:</strong> Use a database to store recipes and a search feature to help users find what they need.</p>
+            </div>
+            <div class="idea">
+                <h3>Travel Itinerary Planner</h3>
+                <p><strong>Description:</strong> Create a tool to help users plan their travel itineraries.</p>
+                <p><strong>Implementation:</strong> Use mapping APIs to suggest routes and places to visit.</p>
+            </div>
+            <div class="idea">
+                <h3>Online Marketplace</h3>
+                <p><strong>Description:</strong> Develop an online marketplace where users can buy and sell products.</p>
+                <p><strong>Implementation:</strong> Use secure payment gateways and user authentication to ensure safe transactions.</p>
+            </div>
+            <div class="idea">
+                <h3>Fitness Tracking App</h3>
+                <p><strong>Description:</strong> Build an app to help users track their fitness activities and goals.</p>
+                <p><strong>Implementation:</strong> Integrate with wearable devices to collect data and display progress over time.</p>
+            </div>
         </div>
+
+        <div class="section">
+            <h2>Additional Resources</h2>
+            <p>Here are some resources to help you get started with your projects:</p>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a> - Comprehensive documentation for web development technologies.</li>
+                <li><a href="https://firebase.google.com/docs">Firebase Documentation</a> - Guides and reference materials for using Firebase services.</li>
+                <li><a href="https://www.tensorflow.org/">TensorFlow</a> - An open-source platform for machine learning.</li>
+                <li><a href="https://reactjs.org/">React</a> - A JavaScript library for building user interfaces.</li>
+                <li><a href="https://www.w3schools.com/">W3Schools</a> - Tutorials and references on web development languages.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Upcoming Features</h2>
+            <p>We are working on adding the following features:</p>
+            <ul>
+                <li>User authentication to provide a personalized experience.</li>
+                <li>Notification system to keep you updated with the latest project ideas.</li>
+                <li>Integration with more APIs to enhance the functionality of the platform.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or suggestions, feel free to reach out to us:</p>
+            <ul>
+                <li>Email: <a href="mailto:support@portfolio.com">support@portfolio.com</a></li>
+                <li>Phone: +1 (555) 123-4567</li>
+                <li>Address: 123 Main St, Anytown, USA</li>
+            </ul>
+        </div>
+
         <a href="index.html" class="home-button">Home</a>
     </div>
 </body>
