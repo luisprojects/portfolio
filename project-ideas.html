@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Ideas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="project-ideas.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Project Ideas</h1>
+        <form id="projectIdeasForm">
+            <label for="ideaTitle">Title:</label>
+            <input type="text" id="ideaTitle" required>
+            <label for="ideaDescription">Description:</label>
+            <textarea id="ideaDescription" rows="4" required></textarea>
+            <label for="ideaImplementation">Implementation:</label>
+            <textarea id="ideaImplementation" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="ideasContainer">
+            <h2>Submitted Ideas</h2>
+            <!-- Submitted ideas will be displayed here -->
+        </div>
+        <a href="index.html" class="home-button">Home</a>
+    </div>
+</body>
+</html>
