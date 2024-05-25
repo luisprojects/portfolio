@@ -6,6 +6,93 @@
     <title>Project Ideas</title>
     <link rel="stylesheet" href="styles.css">
     <script src="project-ideas.js" defer></script>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #218838;
+        }
+
+        #ideasContainer {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .idea {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f4f4f4;
+        }
+
+        .idea h3 {
+            margin-top: 0;
+        }
+
+        .home-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -21,7 +108,22 @@
         </form>
         <div id="ideasContainer">
             <h2>Submitted Ideas</h2>
-            <!-- Submitted ideas will be displayed here -->
+            <div class="idea">
+                <h3>Chatbot Integration</h3>
+                <p><strong>Description:</strong> Implement a chatbot using ChatGPT API to assist users on the website.</p>
+                <p><strong>Implementation:</strong> Use the ChatGPT API to handle user queries and provide automated responses.</p>
+            </div>
+            <div class="idea">
+                <h3>AI Image Recognition</h3>
+                <p><strong>Description:</strong> Create an image recognition tool that identifies objects in uploaded images.</p>
+                <p><strong>Implementation:</strong> Use a pre-trained model like TensorFlow or PyTorch to recognize objects in images.</p>
+            </div>
+            <div class="idea">
+                <h3>Personal Finance Tracker</h3>
+                <p><strong>Description:</strong> Develop a personal finance tracker to help users manage their expenses and savings.</p>
+                <p><strong>Implementation:</strong> Use a combination of frontend and backend technologies to build a secure and user-friendly tracker.</p>
+            </div>
+            <!-- More sample ideas can be added here -->
         </div>
         <a href="index.html" class="home-button">Home</a>
     </div>
