@@ -1,20 +1,5 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
-
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDgUAojmCBprTeY7_o3xGnDhDuPxOPvD_g",
-  authDomain: "portfolio-3014b.firebaseapp.com",
-  projectId: "portfolio-3014b",
-  storageBucket: "portfolio-3014b.appspot.com",
-  messagingSenderId: "764292816862",
-  appId: "1:764292816862:web:4e6fa598a3fc7b774ec74f",
-  measurementId: "G-F9J431P1SW"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+import { db } from './firebase.js';
+import { collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
 
 // Function to render ideas
 async function renderIdeas() {
