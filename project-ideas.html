@@ -4,209 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Ideas</title>
-    <style>
-        body {
-            background-color: #2c2c2c;
-            font-family: Arial, sans-serif;
-            color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-        }
-
-        h1 {
-            color: #28a745;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        form {
-            background-color: #3a3a3a;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-        }
-
-        form label {
-            display: block;
-            margin-bottom: 5px;
-            color: #f0f0f0;
-        }
-
-        form input, form textarea, form button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #2c2c2c;
-            color: #f0f0f0;
-        }
-
-        form button {
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-
-        form button:hover {
-            background-color: #218838;
-        }
-
-        #ideasContainer {
-            background-color: #3a3a3a;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-        }
-
-        .idea {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #2c2c2c;
-        }
-
-        .idea h3 {
-            margin-top: 0;
-            color: #28a745;
-        }
-
-        .idea p {
-            color: #f0f0f0;
-        }
-
-        h2 {
-            color: #ff9933;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .home-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            border-radius: 5px;
-        }
-
-        .home-button:hover {
-            background-color: #0056b3;
-        }
-
-        .section {
-            background-color: #3a3a3a;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-        }
-
-        .section h2 {
-            color: #28a745;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .section p {
-            color: #f0f0f0;
-            margin-bottom: 20px;
-        }
-
-        .section ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
-        .section ul li {
-            margin-bottom: 10px;
-            color: #f0f0f0;
-        }
-
-        a {
-            color: #007bff;
-        }
-
-        a:hover {
-            color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="project-ideas">
     <div class="container">
         <h1>Project Ideas</h1>
+        <form>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" placeholder="Enter project title">
 
-        <div id="ideasContainer">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" placeholder="Enter project description"></textarea>
+
+            <label for="implementation">Implementation:</label>
+            <textarea id="implementation" name="implementation" placeholder="Describe the implementation"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <section id="ideasContainer" class="section">
             <h2>Submitted Ideas</h2>
             <div class="idea">
                 <h3>Chatbot Integration</h3>
-                <p><strong>Description:</strong> Implement a chatbot using ChatGPT API to assist users on the website.</p>
-                <p><strong>Implementation:</strong> Use the ChatGPT API to handle user queries and provide automated responses.</p>
+                <p>Description: Implement a chatbot using ChatGPT API to assist users on the website.</p>
+                <p>Implementation: Use the ChatGPT API to handle user queries and provide automated responses.</p>
             </div>
             <div class="idea">
                 <h3>AI Image Recognition</h3>
-                <p><strong>Description:</strong> Create an image recognition tool that identifies objects in uploaded images.</p>
-                <p><strong>Implementation:</strong> Use a pre-trained model like TensorFlow or PyTorch to recognize objects in images.</p>
+                <p>Description: Create an image recognition tool that identifies objects in uploaded images.</p>
+                <p>Implementation: Use a pre-trained model like TensorFlow or PyTorch to recognize objects in images.</p>
             </div>
             <div class="idea">
                 <h3>Personal Finance Tracker</h3>
-                <p><strong>Description:</strong> Develop a personal finance tracker to help users manage their expenses and savings.</p>
-                <p><strong>Implementation:</strong> Use a combination of frontend and backend technologies to build a secure and user-friendly tracker.</p>
+                <p>Description: Develop a personal finance tracker to help users manage their expenses and savings.</p>
+                <p>Implementation: Build a web application using React and Firebase to store user data securely.</p>
             </div>
             <div class="idea">
-                <h3>Health Monitoring System</h3>
-                <p><strong>Description:</strong> Build a system to monitor and track vital health statistics for patients remotely.</p>
-                <p><strong>Implementation:</strong> Use IoT devices to collect data and a web application to display the statistics.</p>
+                <h3>Smart Home Automation</h3>
+                <p>Description: Create a system to automate various home functions like lighting and temperature control.</p>
+                <p>Implementation: Use IoT devices and integrate them with a central control system using a web interface.</p>
+            </div>
+            <div class="idea">
+                <h3>Recipe Recommendation System</h3>
+                <p>Description: Build a system that recommends recipes based on user preferences and available ingredients.</p>
+                <p>Implementation: Use machine learning algorithms to analyze user data and suggest personalized recipes.</p>
+            </div>
+            <div class="idea">
+                <h3>Online Learning Platform</h3>
+                <p>Description: Develop a platform for online courses with features like quizzes, video lectures, and forums.</p>
+                <p>Implementation: Use a combination of HTML, CSS, JavaScript, and a backend framework like Django or Node.js.</p>
             </div>
             <div class="idea">
                 <h3>Weather Forecasting App</h3>
-                <p><strong>Description:</strong> Create a mobile app that provides real-time weather updates and forecasts.</p>
-                <p><strong>Implementation:</strong> Use a weather API to fetch data and display it in a user-friendly interface.</p>
+                <p>Description: Create an app that provides weather forecasts and alerts based on the user's location.</p>
+                <p>Implementation: Use a weather API to fetch data and display it in a user-friendly interface.</p>
             </div>
             <div class="idea">
-                <h3>Language Learning Platform</h3>
-                <p><strong>Description:</strong> Develop a platform to help users learn new languages through interactive lessons and quizzes.</p>
-                <p><strong>Implementation:</strong> Use spaced repetition algorithms and gamification techniques to enhance learning.</p>
+                <h3>Language Learning Tool</h3>
+                <p>Description: Build a tool to help users learn new languages through interactive exercises and quizzes.</p>
+                <p>Implementation: Use gamification techniques and spaced repetition algorithms to enhance learning.</p>
             </div>
             <div class="idea">
-                <h3>Recipe Sharing Community</h3>
-                <p><strong>Description:</strong> Build a website where users can share and discover new recipes.</p>
-                <p><strong>Implementation:</strong> Use a database to store recipes and a search feature to help users find what they need.</p>
+                <h3>Fitness Tracker</h3>
+                <p>Description: Develop an app to track fitness activities, monitor health metrics, and set fitness goals.</p>
+                <p>Implementation: Integrate with wearable devices and use data visualization techniques to present user data.</p>
             </div>
             <div class="idea">
-                <h3>Travel Itinerary Planner</h3>
-                <p><strong>Description:</strong> Create a tool to help users plan their travel itineraries.</p>
-                <p><strong>Implementation:</strong> Use mapping APIs to suggest routes and places to visit.</p>
+                <h3>Virtual Reality Tour Guide</h3>
+                <p>Description: Create a VR application that offers virtual tours of popular tourist destinations.</p>
+                <p>Implementation: Use VR technology and 360-degree videos to provide immersive experiences.</p>
             </div>
-            <div class="idea">
-                <h3>Online Marketplace</h3>
-                <p><strong>Description:</strong> Develop an online marketplace where users can buy and sell products.</p>
-                <p><strong>Implementation:</strong> Use secure payment gateways and user authentication to ensure safe transactions.</p>
-            </div>
-            <div class="idea">
-                <h3>Fitness Tracking App</h3>
-                <p><strong>Description:</strong> Build an app to help users track their fitness activities and goals.</p>
-                <p><strong>Implementation:</strong> Integrate with wearable devices to collect data and display progress over time.</p>
-            </div>
-        </div>
+        </section>
 
-        <div class="section">
+        <section class="section">
             <h2>Additional Resources</h2>
-            <p>Here are some resources to help you get started with your projects:</p>
             <ul>
                 <li><a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a> - Comprehensive documentation for web development technologies.</li>
                 <li><a href="https://firebase.google.com/docs">Firebase Documentation</a> - Guides and reference materials for using Firebase services.</li>
@@ -214,29 +85,9 @@
                 <li><a href="https://reactjs.org/">React</a> - A JavaScript library for building user interfaces.</li>
                 <li><a href="https://www.w3schools.com/">W3Schools</a> - Tutorials and references on web development languages.</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2>Upcoming Features</h2>
-            <p>We are working on adding the following features:</p>
-            <ul>
-                <li>User authentication to provide a personalized experience.</li>
-                <li>Notification system to keep you updated with the latest project ideas.</li>
-                <li>Integration with more APIs to enhance the functionality of the platform.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or suggestions, feel free to reach out to us:</p>
-            <ul>
-                <li>Email: <a href="mailto:support@portfolio.com">support@portfolio.com</a></li>
-                <li>Phone: +1 (555) 123-4567</li>
-                <li>Address: 123 Main St, Anytown, USA</li>
-            </ul>
-        </div>
-
-        <a href="index.html" class="home-button">Home</a>
+        <a href="index.html" class="btn home-button">Go Back to Home</a>
     </div>
 </body>
 </html>
