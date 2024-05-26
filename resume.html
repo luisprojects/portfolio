@@ -5,13 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Resume</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        .resume-card {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        .resume-card h2 {
+            color: #ff9933;
+            margin-top: 0;
+        }
+        .resume-card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .resume-card ul li {
+            background-color: #444;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1 class="main-title">Interactive Resume</h1>
 
-        <section class="section">
+        <div class="resume-card">
             <h2>Education</h2>
             <ul>
                 <li>B.A in Artificial Intelligence, Vrije Universiteit Amsterdam, Netherlands (2021 - Present)</li>
@@ -20,21 +43,40 @@
                 <li>Scientific Baccalaureate, Technological Science Path, IES Josep Maria Llompart, Spain (2019 - 2021)</li>
                 <li>Exchange Study Abroad, Western Harnett HS, North Carolina, USA (2018 - 2019)</li>
             </ul>
-        </section>
+        </div>
 
-        <section class="section">
+        <div class="resume-card">
             <h2>Work Experience</h2>
             <ul>
                 <li>Shift Leader, Salsa Shop, Fall 2022 - Present</li>
                 <li>Spanish Teaching Assistant, Fall 2018 - Summer 2019</li>
             </ul>
-        </section>
+        </div>
 
+        <div class="resume-card">
+            <h2>Skills</h2>
+            <ul>
+                <li>Well-organized and adaptable</li>
+                <li>Collaboration-driven, team player</li>
+                <li>Great oral and written communicator</li>
+                <li>Ability to adapt to new and extraordinary situations</li>
+                <li>Proactive and always willing to learn</li>
+            </ul>
+        </div>
 
-        <section class="section">
+        <div class="resume-card">
+            <h2>Languages</h2>
+            <ul>
+                <li>Spanish - Native Speaker</li>
+                <li>Catalan - Native Speaker</li>
+                <li>English - Fluent (C1 Level)</li>
+            </ul>
+        </div>
+
+        <div class="resume-card">
             <h2>Download Resume</h2>
             <a href="resume.pdf" class="btn" download>Download PDF</a>
-        </section>
+        </div>
 
         <a href="index.html" class="btn home-button">Go Back to Home</a>
     </div>
