@@ -1,255 +1,212 @@
-/* General styles */
+/* General Styles */
 body {
+    background-color: #000;
     font-family: Arial, sans-serif;
+    color: #fff;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
+    padding: 20px;
 }
 
 h1, h2 {
-    color: #333;
-}
-
-a {
-    text-decoration: none;
-    color: #333;
-}
-
-.home-button, .button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+    color: #ff9933;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.home-button:hover, .button:hover {
-    background-color: #555;
-}
-
-/* New styles */
-
-/* Navigation styles */
-.navigation {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.navigation .button {
-    flex-grow: 1;
-    margin: 0 10px;
-    text-align: center;
-}
-
-/* Form styles */
 form {
-    margin-top: 20px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
 }
 
 form label {
     display: block;
-    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #fff;
 }
 
 form input, form textarea, form button {
     width: 100%;
     padding: 10px;
-    margin-top: 5px;
-}
-
-/* Ideas container */
-#ideasContainer .idea {
-    background-color: #fff;
-    padding: 15px;
-    margin-top: 20px;
+    margin-bottom: 10px;
     border: 1px solid #ddd;
-}
-
-/* News item */
-.news-item {
-    background-color: #fff;
-    padding: 15px;
-    margin-top: 20px;
-    border: 1px solid #ddd;
-}
-
-.news-item h3 {
-    margin: 0 0 10px 0;
-}
-
-/* Original styles from the uploaded file */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
+    border-radius: 5px;
+    background-color: #444;
     color: #fff;
-    padding: 10px 20px;
 }
 
-header h1 {
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
+form button {
+    background-color: #ff9933;
     color: #fff;
-    text-decoration: none;
-}
-
-main {
-    margin-top: 20px;
-}
-
-footer {
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-th {
-    background-color: #f4f4f4;
-    text-align: left;
-}
-
-td {
-    text-align: left;
-}
-
-section {
-    margin-top: 20px;
-}
-
-.section {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    margin-top: 20px;
-}
-
-.section h2 {
-    margin-top: 0;
-}
-
-.box {
-    background-color: #f4f4f4;
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-top: 10px;
-}
-
-.button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.button:hover {
-    background-color: #555;
-}
-
-.logout-button {
-    background-color: #ff3333;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
     border: none;
     cursor: pointer;
 }
 
-.logout-button:hover {
-    background-color: #cc0000;
+form button:hover {
+    background-color: #cc7a29;
 }
 
-.login-container {
-    max-width: 400px;
-    margin: 50px auto;
+#ideasContainer {
+    background-color: #333;
     padding: 20px;
-    border: 1px solid #ddd;
-    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
 }
 
-.login-container h1 {
+.idea {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #222;
+}
+
+.idea h3 {
+    margin-top: 0;
+    color: #ff9933;
+}
+
+.idea p {
+    color: #ccc;
+}
+
+.section {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    color: #ff9933;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.login-container label {
-    display: block;
-    margin-bottom: 5px;
+.section p, .section ul {
+    color: #ccc;
 }
 
-.login-container input {
-    width: 100%;
-    padding: 10px;
+.section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.section ul li {
     margin-bottom: 10px;
-    border: 1px solid #ddd;
 }
 
-.login-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #333;
+.home-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
 }
 
-.login-container button:hover {
-    background-color: #555;
+.home-button:hover {
+    background-color: #0056b3;
 }
 
-#comments {
-    margin-top: 20px;
+a {
+    color: #007bff;
 }
 
-.comment {
-    background-color: #f4f4f4;
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-top: 10px;
+a:hover {
+    color: #0056b3;
+}
+
+/* Specific Styles for project-ideas.html */
+body.project-ideas {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+}
+
+body.project-ideas .container {
+    background-color: #333;
+    padding: 20px;
+}
+
+body.project-ideas h1,
+body.project-ideas h2 {
+    color: #28a745;
+}
+
+body.project-ideas form {
+    background-color: #3a3a3a;
+}
+
+body.project-ideas form input,
+body.project-ideas form textarea,
+body.project-ideas form button {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+}
+
+body.project-ideas form button {
+    background-color: #28a745;
+}
+
+body.project-ideas form button:hover {
+    background-color: #218838;
+}
+
+body.project-ideas #ideasContainer {
+    background-color: #3a3a3a;
+}
+
+body.project-ideas .idea {
+    background-color: #2c2c2c;
+}
+
+body.project-ideas .idea h3 {
+    color: #28a745;
+}
+
+body.project-ideas .idea p {
+    color: #f0f0f0;
+}
+
+body.project-ideas .section {
+    background-color: #3a3a3a;
+}
+
+body.project-ideas .section h2 {
+    color: #28a745;
+}
+
+body.project-ideas .section p,
+body.project-ideas .section ul {
+    color: #f0f0f0;
+}
+
+body.project-ideas .home-button {
+    background-color: #007bff;
+}
+
+body.project-ideas .home-button:hover {
+    background-color: #0056b3;
+}
+
+body.project-ideas a {
+    color: #007bff;
+}
+
+body.project-ideas a:hover {
+    color: #0056b3;
 }
