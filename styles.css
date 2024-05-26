@@ -62,6 +62,25 @@ body {
     color: #ccc; /* Light gray list items */
 }
 
+.section pre {
+    background-color: #444; /* Darker background for code blocks */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.section pre code {
+    color: #f0f0f0; /* Light gray code text */
+}
+
+.section a {
+    color: #007bff; /* Blue link color */
+}
+
+.section a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
 /* Table Styles */
 table {
     width: 100%;
@@ -85,15 +104,6 @@ th {
 
 td {
     background-color: #444; /* Medium gray cell background */
-}
-
-/* Link Styles */
-a {
-    color: #007bff; /* Blue link color */
-}
-
-a:hover {
-    color: #0056b3; /* Darker blue on hover */
 }
 
 /* Specific Styles for project-ideas.html */
