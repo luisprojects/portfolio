@@ -20,39 +20,21 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
-/* Form Styles */
-form {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-    color: #fff;
-}
-
-form input, form textarea, form button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #444;
-    color: #fff;
-}
-
-form button {
+/* Button Styles */
+.btn {
+    display: inline-block;
+    margin: 10px 5px; /* Adjusted margin for better spacing */
+    padding: 10px 20px;
     background-color: #ff9933;
     color: #fff;
     border: none;
     cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
-form button:hover {
+.btn:hover {
     background-color: #cc7a29;
 }
 
@@ -91,24 +73,6 @@ td {
 
 .day h2 {
     margin-top: 0;
-}
-
-/* Button Styles */
-.btn {
-    display: inline-block;
-    margin: 10px 0;
-    padding: 10px 20px;
-    background-color: #ff9933;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.btn:hover {
-    background-color: #cc7a29;
 }
 
 /* Link Styles */
@@ -198,4 +162,91 @@ body.project-ideas a {
 
 body.project-ideas a:hover {
     color: #0056b3;
+}
+
+/* Blog Post Styles */
+.blog {
+    margin-top: 40px;
+}
+
+.blog .blog-post {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.blog .blog-post h3 {
+    color: #ff9933;
+    margin-top: 0;
+}
+
+.blog .blog-post p {
+    color: #ccc;
+}
+
+.blog .blog-post ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.blog .blog-post ul li {
+    color: #ccc;
+}
+
+/* Form Styles */
+form {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+}
+
+form button {
+    background-color: #ff9933;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #cc7a29;
+}
+
+/* Additional Sections */
+.additional.section {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.additional.section h2 {
+    color: #ff9933;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.additional.section p {
+    color: #ccc;
+    margin-bottom: 20px;
 }
