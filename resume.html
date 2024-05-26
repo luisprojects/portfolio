@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Interactive Resume</h1>
+
+        <section class="section">
+            <h2>Education</h2>
+            <ul>
+                <li>B.A in Artificial Intelligence, Vrije Universiteit Amsterdam, Netherlands (2021 - Present)</li>
+                <li>Python 3 course, Codecademy (Completed)</li>
+                <li>SQL course, Codecademy (In Progress)</li>
+                <li>Scientific Baccalaureate, Technological Science Path, IES Josep Maria Llompart, Spain (2019 - 2021)</li>
+                <li>Exchange Study Abroad, Western Harnett HS, North Carolina, USA (2018 - 2019)</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Work Experience</h2>
+            <ul>
+                <li>Shift Leader, Salsa Shop, Fall 2022 - Present</li>
+                <li>Spanish Teaching Assistant, Fall 2018 - Summer 2019</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Skills</h2>
+            <div id="skills-chart"></div>
+            <script>
+                var data = [{
+                    x: ['JavaScript', 'Python', 'SQL', 'HTML/CSS', 'Machine Learning'],
+                    y: [90, 85, 80, 95, 70],
+                    type: 'bar'
+                }];
+                Plotly.newPlot('skills-chart', data);
+            </script>
+        </section>
+
+        <section class="section">
+            <h2>Download Resume</h2>
+            <a href="resume.pdf" class="btn" download>Download PDF</a>
+        </section>
+
+        <a href="index.html" class="btn home-button">Go Back to Home</a>
+    </div>
+</body>
+</html>
