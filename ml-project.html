@@ -3,193 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machine Learning Project</title>
+    <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .collapsible {
-            cursor: pointer;
-            padding: 20px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 1.2em;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .collapsible:hover {
-            background-color: #444;
-        }
-
-        .collapsible.problem {
-            background-color: #333;
-        }
-
-        .collapsible.methodology {
-            background-color: #444;
-        }
-
-        .collapsible.results {
-            background-color: #555;
-        }
-
-        .collapsible.key-takeaways {
-            background-color: #666;
-        }
-
-        .content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: #444;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            transition: max-height 0.3s ease;
-        }
-
-        .content p, .content ul {
-            margin: 20px 0;
-        }
-
-        .project-container {
-            padding: 20px;
-        }
-
-        .project-container h2 {
-            color: #ff9933;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        .methodology-box, .keytakeaway-box {
-            background-color: #555;
-            color: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .project-container pre {
-            background-color: #222;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-
-        .project-container pre code {
-            color: #f0f0f0;
-        }
-    </style>
+    <script src="firebase.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <h1 class="main-title">Machine Learning Project: Image Classification</h1>
+        <h1 class="main-title">My Portfolio</h1>
+        <button class="logout-button btn" onclick="logout()">Sign Out</button>
 
-        <div class="project-container">
-            <button type="button" class="collapsible problem"><h2>Problem Statement</h2></button>
-            <div class="content">
-                <p>The goal of this project is to develop a machine learning model to classify images into different categories. The model should be able to accurately identify the content of an image and categorize it appropriately, which can have applications in various domains such as healthcare, security, and e-commerce.</p>
-            </div>
-
-            <button type="button" class="collapsible methodology"><h2>Methodology</h2></button>
-            <div class="content">
-                <p>To achieve the objective, the following steps were undertaken:</p>
-                <div class="methodology-box">
-                    <strong>Data Collection:</strong> A dataset of labeled images was gathered from Kaggle, consisting of over 50,000 images across 10 categories.
-                </div>
-                <div class="methodology-box">
-                    <strong>Data Preprocessing:</strong> Images were resized to 64x64 pixels, normalized, and augmented to increase the diversity of the training data. Augmentation techniques included rotation, flipping, and zooming.
-                </div>
-                <div class="methodology-box">
-                    <strong>Model Selection:</strong> A Convolutional Neural Network (CNN) architecture was chosen for its effectiveness in image classification tasks. The architecture included multiple convolutional layers, followed by max-pooling layers, and fully connected layers.
-                </div>
-                <div class="methodology-box">
-                    <strong>Training:</strong> The model was trained on the preprocessed dataset for 50 epochs using the Adam optimizer. Hyperparameters such as learning rate and batch size were tuned to optimize performance.
-                </div>
-                <div class="methodology-box">
-                    <strong>Evaluation:</strong> Model performance was evaluated using a separate test dataset, and metrics such as accuracy, precision, recall, and F1-score were calculated.
-                </div>
-                <div class="methodology-box">
-                    <strong>Deployment:</strong> The trained model was deployed to a web application using Flask, enabling real-time image classification through a user-friendly interface.
-                </div>
-            </div>
-
-            <button type="button" class="collapsible results"><h2>Results</h2></button>
-            <div class="content">
-                <p>The CNN model achieved an accuracy of 92% on the test dataset, with the following detailed metrics:</p>
-                <ul>
-                    <li><strong>Precision:</strong> 91%</li>
-                    <li><strong>Recall:</strong> 90%</li>
-                    <li><strong>F1-Score:</strong> 90.5%</li>
-                </ul>
-                <p>These results indicate that the model performs well in classifying images into their respective categories. Below is an example of the code used to train the model:</p>
-                <pre>
-<code>
-import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-
-# Define the model
-model = Sequential([
-    Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3)),
-    MaxPooling2D(pool_size=(2, 2)),
-    Conv2D(64, (3, 3), activation='relu'),
-    MaxPooling2D(pool_size=(2, 2)),
-    Flatten(),
-    Dense(128, activation='relu'),
-    Dense(10, activation='softmax')
-])
-
-# Compile the model
-model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
-
-# Data augmentation and training
-datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
-training_set = datagen.flow_from_directory('data/train', target_size=(64, 64), batch_size=32, class_mode='categorical')
-test_set = datagen.flow_from_directory('data/test', target_size=(64, 64), batch_size=32, class_mode='categorical')
-
-model.fit(training_set, epochs=25, validation_data=test_set)
-</code>
-                </pre>
-            </div>
-
-            <button type="button" class="collapsible key-takeaways"><h2>Key Takeaways</h2></button>
-            <div class="content">
-                <div class="keytakeaway-box">
-                    Data quality is crucial for the performance of the model. Ensuring a diverse and representative dataset can significantly improve accuracy.
-                </div>
-                <div class="keytakeaway-box">
-                    Hyperparameter tuning can have a substantial impact on the model's performance. Experimenting with different values can help achieve better results.
-                </div>
-                <div class="keytakeaway-box">
-                    Deploying the model to a web application allows for real-time predictions, making the model accessible and usable for end-users.
-                </div>
-            </div>
+        <div class="navigation">
+            <a href="finances.html" class="btn">FINANCES</a>
+            <a href="studies.html" class="btn">STUDIES</a>
+            <a href="work.html" class="btn">WORK</a>
+            <a href="schedule.html" class="btn">SCHEDULE</a>
+            <a href="tech-news.html" class="btn">TECH NEWS</a>
+            <a href="project-ideas.html" class="btn">PROJECT IDEAS</a>
+            <a href="resume.html" class="btn">INTERACTIVE RESUME</a>
+            <a href="ml-project.html" class="btn">ML PROJECT</a>
         </div>
 
-        <a href="index.html" class="btn home-button">Home</a>
+        <section class="about-me section">
+            <h2>About Me</h2>
+            <p>My name is Luis Noguera, and I’m from Palma de Mallorca. I am currently a third-year Artificial Intelligence student at Vrije Universiteit Amsterdam. I have a deep passion for technology and problem-solving, which aligns perfectly with my academic background and career goals.</p>
+            <p>In my free time, I enjoy staying updated with the latest tech trends, working on personal projects, and exploring new places. I'm always eager to learn and grow both personally and professionally.</p>
+            <p>Aside from my academic and professional interests, I am actively involved in various community service activities, such as volunteering at local shelters and participating in environmental conservation projects. These experiences have greatly contributed to my personal growth and understanding of societal issues.</p>
+            <p>I am also an avid reader, with a keen interest in genres ranging from science fiction to historical non-fiction. This hobby has significantly enhanced my analytical and critical thinking skills.</p>
+            <p>Traveling is another passion of mine. Exploring new cultures and meeting people from diverse backgrounds has broadened my horizons and instilled in me a deep appreciation for global diversity and inclusivity.</p>
+        </section>
+
+        <section class="education section">
+            <h2>Education</h2>
+            <ul>
+                <li>B.A in Artificial Intelligence, Vrije Universiteit Amsterdam, Netherlands (2021 - Present)</li>
+                <li>Python 3 course, Codecademy (Completed)</li>
+                <li>SQL course, Codecademy (In Progress)</li>
+                <li>Scientific Baccalaureate, Technological Science Path, IES Josep Maria Llompart, Spain (2019 - 2021)</li>
+                <li>Exchange Study Abroad, Western Harnett HS, North Carolina, USA (2018 - 2019)</li>
+            </ul>
+        </section>
+
+        <section class="skills section">
+            <h2>Skills</h2>
+            <ul>
+                <li>Well-organized and adaptable</li>
+                <li>Collaboration-driven, team player</li>
+                <li>Great oral and written communicator</li>
+                <li>Ability to adapt to new and extraordinary situations</li>
+                <li>Proactive and always willing to learn</li>
+            </ul>
+        </section>
+
+        <section class="languages section">
+            <h2>Languages</h2>
+            <ul>
+                <li>Spanish - Native Speaker</li>
+                <li>Catalan - Native Speaker</li>
+                <li>English - Fluent (C1 Level)</li>
+            </ul>
+        </section>
+
+        <section class="work-experience section">
+            <h2>Work Experience</h2>
+            <ul>
+                <li>Shift Leader, Salsa Shop, Fall 2022 - Present</li>
+                <li>Spanish Teaching Assistant, Fall 2018 - Summer 2019</li>
+            </ul>
+        </section>
+
+        <section class="projects section">
+            <div style="display: flex; align-items: center;">
+                <h2 style="flex: 1;">Projects</h2>
+                <a href="project-ideas.html" class="btn" style="flex: 0;">Project Ideas</a>
+            </div>
+            <ul>
+                <li><strong>Project 1: Snake Game</strong> - A classic Snake game implemented using HTML, CSS, and JavaScript. <a href="snake.html">Play Snake Game</a></li>
+                <li><strong>Project 2: Tech News Updates</strong> - Stay updated with the latest advancements and news in AI and technology. <a href="tech-news.html">Read More</a></li>
+                <li><strong>Project 3: Understanding APIs</strong> - Learn about APIs, how they work, and how to use the ChatGPT API. <a href="apis.html">Read More</a></li>
+                <li><strong>Project 4: Machine Learning Project</strong> - A comprehensive machine learning project on image classification. <a href="ml-project.html">Read More</a></li>
+            </ul>
+        </section>
+
+        <section class="goals section">
+            <h2>Goals</h2>
+            <p>My short-term goal is to secure an internship where I can apply my knowledge and skills in a practical environment. Long-term, I aim to become a Solutions Architect, contributing to innovative projects and helping to solve complex problems.</p>
+        </section>
+
+        <section class="additional section">
+            <h2>Additional Information</h2>
+            <p>In addition to my academic and professional pursuits, I am deeply involved in community service. I regularly volunteer at local shelters and participate in environmental conservation projects. These activities not only allow me to give back to the community but also help me develop a well-rounded perspective on various societal issues.</p>
+            <p>Moreover, I am an avid reader and enjoy exploring genres ranging from science fiction to historical non-fiction. This hobby has significantly enhanced my analytical and critical thinking skills, which I find invaluable in both my personal and professional life.</p>
+            <p>Traveling is another passion of mine. Experiencing new cultures and meeting people from diverse backgrounds has been incredibly enriching. It has broadened my horizons and instilled in me a deep appreciation for global diversity and inclusivity.</p>
+        </section>
+
+        <section class="blog section">
+            <h2>Blog</h2>
+            <div class="blog-post new-blog-post" style="background-color: #ffcc00;">
+                <h3>26/05 Website Enhancements and New Project Page</h3>
+                <p>Today, we made significant updates to the portfolio website:</p>
+                <ul>
+                    <li>Updated the Machine Learning Project page with collapsible sections and detailed content.</li>
+                    <li>Ensured each section under Methodology and Key Takeaways has its own gray box.</li>
+                    <li>Styled the main titles to be centered, larger, and in orange for better visibility.</li>
+                    <li>Gradually adjusted the background color of each section's collapsible button from darker to lighter shades.</li>
+                    <li>Added a new blog post about today's updates, highlighted in a distinct color to indicate recent activity.</li>
+                </ul>
+            </div>
+            <div class="blog-post">
+                <h3>25/05 Added New Features and Improved Design</h3>
+                <p>Today, several new features were added and design improvements were made:</p>
+                <ul>
+                    <li>Removed the "Snake Game" button from the main navigation and made it accessible only through the Projects section.</li>
+                    <li>Created a new page for updates on the conflict in Palestine, accessible from the navigation menu and added to the Projects section.</li>
+                    <li>Designed a new Project Ideas page with a lighter background and added interactive elements for submitting and displaying project ideas.</li>
+                    <li>Updated the navigation and Projects section to include the new Project Ideas page.</li>
+                    <li>Enhanced the overall aesthetics of the Project Ideas page to ensure readability and a modern look.</li>
+                </ul>
+            </div>
+            <div class="blog-post">
+                <h3>21/05 Worked on Improving General Pages</h3>
+                <p>Today, we focused on enhancing the overall structure and functionality of the portfolio website. This included updating various sections and improving the user experience. A significant addition was the implementation of the classic Snake game, which was integrated seamlessly into the website. The Snake game now includes wrap-around functionality and is linked from the Projects section. Users can enjoy playing the game directly on the site.</p>
+            </div>
+            <div class="blog-post">
+                <h3>20/05 Worked on Releasing Website via Git</h3>
+                <p>Worked on realising website via Git, improved UI, worked on login interface and debugging.</p>
+                <p>Ideas to work on these days:</p>
+                <ul>
+                    <li>Debugging Sign-Out button to set login to false and redirect to portfolio/login.html</li>
+                    <li>Change UI to make it look more professional</li>
+                    <li>Edit text, add weekly budget and find a way to easily keep track of expenses</li>
+                </ul>
+            </div>
+
+            <form id="commentForm">
+                <h3>Leave a Comment</h3>
+                <input type="text" id="commentInput" placeholder="Write your comment here..." required>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="comments"></div>
+        </section>
     </div>
-
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-        }
-    </script>
 </body>
 </html>
