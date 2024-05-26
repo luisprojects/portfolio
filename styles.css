@@ -14,8 +14,9 @@ body {
     padding: 20px;
 }
 
-h1, h2 {
-    color: #ff9933; /* Orange titles */
+.main-title {
+    font-size: 3em; /* Larger main title */
+    color: #ff9933; /* Orange color */
     text-align: center;
     margin-bottom: 20px;
 }
@@ -36,6 +37,29 @@ h1, h2 {
 
 .btn:hover {
     background-color: #cc7a29; /* Darker orange on hover */
+}
+
+/* Section Styles */
+.section {
+    background-color: #333; /* Dark gray background for sections */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: #ff9933; /* Orange section titles */
+    margin-top: 0;
+}
+
+.section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.section ul li {
+    color: #ccc; /* Light gray list items */
 }
 
 /* Table Styles */
@@ -61,18 +85,6 @@ th {
 
 td {
     background-color: #444; /* Medium gray cell background */
-}
-
-/* Schedule Styles */
-.schedule {
-    background-color: #333; /* Dark gray background */
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.day h2 {
-    margin-top: 0;
 }
 
 /* Link Styles */
