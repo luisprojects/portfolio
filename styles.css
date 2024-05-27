@@ -37,6 +37,21 @@ body {
 
 
 /* Container */
+.purplecontainer {
+    background-color: rgb(136, 255, 140); /* Semi-transparent purple background */
+    padding: 40px;
+    margin-top: -20px;
+    margin-bottom: -40px;
+
+}
+
+.yellowcontainer {
+    background-color: rgb(254, 228, 102); /* Semi-transparent purple background */
+
+    margin-top: -20px;
+    margin-bottom: -40px;
+
+}
 .title-container {
     background-color: rgba(0, 0, 0, 1); /* Semi-transparent dark background */
     padding: 10px 0;
@@ -145,9 +160,9 @@ nav ul li a:hover {
     background-color: #333; /* Dark gray background for sections */
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 1000px; /* Limit the section width */
+    max-width: 1200px; /* Limit the section width */
     margin-left: auto;
     margin-right: auto;
 }
