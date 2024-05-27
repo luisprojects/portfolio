@@ -5,26 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="firebase.js" defer></script>
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <h1 class="main-title">My Portfolio</h1>
-        <button class="logout-button btn" onclick="logout()">Sign Out</button>
+   <header>
+    <div class="title-container">
+        <h1 class="indexmain-title">My Portfolio</h1>
 
-        <div class="navigation">
-            <a href="finances.html" class="btn">FINANCES</a>
-            <a href="studies.html" class="btn">STUDIES</a>
-            <a href="work.html" class="btn">WORK</a>
-            <a href="schedule.html" class="btn">SCHEDULE</a>
-            <a href="tech-news.html" class="btn">TECH NEWS</a>
-            <a href="project-ideas.html" class="btn">PROJECT IDEAS</a>
-            <a href="resume.html" class="btn">INTERACTIVE RESUME</a>
-            <a href="ml-project.html" class="btn">ML PROJECT</a>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="btn">HOME</a></li>
+            <li><a href="finances.html" class="btn">FINANCES</a></li>
+            <li><a href="studies.html" class="btn">STUDIES</a></li>
+            <li><a href="work.html" class="btn">WORK</a></li>
+            <li><a href="schedule.html" class="btn">SCHEDULE</a></li>
+            <li><a href="tech-news.html" class="btn">TECH NEWS</a></li>
+            <li><a href="project-ideas.html" class="btn">PROJECT IDEAS</a></li>
+            <li><a href="ml-project.html" class="btn">ML PROJECT</a></li>
+            <li><a href="interactive-resume.html" class="btn">INTERACTIVE RESUME</a></li>
+        </ul>
+    </nav>
+    </nav>
+    </nav>
+
+    </div>
+</header>
+    <main class="gay-container">
+        <div class="intro">
+            <div class="intro-content">
+                
+                <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+                <h2 class="name">Luis Noguera</h2>
+            </div>
         </div>
-
-        <section class="about-me section">
+    </main>
+        </div>
+        <section class="section">
             <h2>About Me</h2>
             <p>My name is Luis Noguera, and I’m from Palma de Mallorca. I am currently a third-year Artificial Intelligence student at Vrije Universiteit Amsterdam. I have a deep passion for technology and problem-solving, which aligns perfectly with my academic background and career goals.</p>
             <p>In my free time, I enjoy staying updated with the latest tech trends, working on personal projects, and exploring new places. I'm always eager to learn and grow both personally and professionally.</p>
@@ -32,58 +47,46 @@
             <p>I am also an avid reader, with a keen interest in genres ranging from science fiction to historical non-fiction. This hobby has significantly enhanced my analytical and critical thinking skills.</p>
             <p>Traveling is another passion of mine. Exploring new cultures and meeting people from diverse backgrounds has broadened my horizons and instilled in me a deep appreciation for global diversity and inclusivity.</p>
         </section>
-
-        <section class="education section">
+        <section class="section">
             <h2>Education</h2>
-            <ul>
-                <li>B.A in Artificial Intelligence, Vrije Universiteit Amsterdam, Netherlands (2021 - Present)</li>
-                <li>Python 3 course, Codecademy (Completed)</li>
-                <li>SQL course, Codecademy (In Progress)</li>
-                <li>Scientific Baccalaureate, Technological Science Path, IES Josep Maria Llompart, Spain (2019 - 2021)</li>
-                <li>Exchange Study Abroad, Western Harnett HS, North Carolina, USA (2018 - 2019)</li>
-            </ul>
+            <div class="item-box">B.A in Artificial Intelligence, Vrije Universiteit Amsterdam, Netherlands (2021 - Present)</div>
+            <div class="item-box">Python 3 course, Codecademy (Completed)</div>
+            <div class="item-box">SQL course, Codecademy (In Progress)</div>
+            <div class="item-box">Scientific Baccalaureate, Technological Science Path, IES Josep Maria Llompart, Spain (2019 - 2021)</div>
+            <div class="item-box">Exchange Study Abroad, Western Harnett HS, North Carolina, USA (2018 - 2019)</div>
         </section>
-
-        <section class="skills section">
+        <section class="section">
             <h2>Skills</h2>
-            <ul>
-                <li>Well-organized and adaptable</li>
-                <li>Collaboration-driven, team player</li>
-                <li>Great oral and written communicator</li>
-                <li>Ability to adapt to new and extraordinary situations</li>
-                <li>Proactive and always willing to learn</li>
-            </ul>
+            <div class="item-box">Well-organized and adaptable</div>
+            <div class="item-box">Collaboration-driven, team player</div>
+            <div class="item-box">Great oral and written communicator</div>
+            <div class="item-box">Ability to adapt to new and extraordinary situations</div>
+            <div class="item-box">Proactive and always willing to learn</div>
         </section>
-
-        <section class="languages section">
+        <section class="section">
             <h2>Languages</h2>
-            <ul>
-                <li>Spanish - Native Speaker</li>
-                <li>Catalan - Native Speaker</li>
-                <li>English - Fluent (C1 Level)</li>
-            </ul>
+            <div class="item-box">Spanish - Native Speaker</div>
+            <div class="item-box">Catalan - Native Speaker</div>
+            <div class="item-box">English - Fluent (C1 Level)</div>
         </section>
-
-        <section class="work-experience section">
+        <section class="section">
             <h2>Work Experience</h2>
+
             <ul>
                 <li>Shift Leader, Salsa Shop, Fall 2022 - Present</li>
                 <li>Spanish Teaching Assistant, Fall 2018 - Summer 2019</li>
             </ul>
         </section>
-
         <section class="projects section">
-            <div style="display: flex; align-items: center;">
-                <h2 style="flex: 1;">Projects</h2>
-                <a href="project-ideas.html" class="btn" style="flex: 0;">Project Ideas</a>
-            </div>
-            <ul>
-                <li><strong>Project 1: Snake Game</strong> - A classic Snake game implemented using HTML, CSS, and JavaScript. <a href="snake.html">Play Snake Game</a></li>
-                <li><strong>Project 2: Tech News Updates</strong> - Stay updated with the latest advancements and news in AI and technology. <a href="tech-news.html">Read More</a></li>
-                <li><strong>Project 3: Understanding APIs</strong> - Learn about APIs, how they work, and how to use the ChatGPT API. <a href="apis.html">Read More</a></li>
-                <li><strong>Project 4: Machine Learning Project</strong> - A comprehensive machine learning project on image classification. <a href="ml-project.html">Read More</a></li>
-            </ul>
-        </section>
+    <div style="display: flex; align-items: center;">
+        <h2 style="flex: 1;">Projects</h2>
+        <li><a href="project-ideas.html" class="btn large-btn" style="flex: 0;">Project Ideas</a></li>
+    </div>
+    <div class="item-box"><strong>Project 1: Snake Game</strong> - A classic Snake game implemented using HTML, CSS, and JavaScript. <a href="snake.html" class="btn red-shine">Play Snake Game</a></div>
+    <div class="item-box"><strong>Project 2: Tech News Updates</strong> - Stay updated with the latest advancements and news in AI and technology. <a href="tech-news.html" class="btn red-shine">Read More</a></div>
+    <div class="item-box"><strong>Project 3: Understanding APIs</strong> - Learn about APIs, how they work, and how to use the ChatGPT API. <a href="apis.html" class="btn red-shine">Read More</a></div>
+    <div class="item-box"><strong>Project 4: Machine Learning Project</strong> - A comprehensive machine learning project on image classification. <a href="ml-project.html" class="btn red-shine">Read More</a></div>
+</section>
 
         <section class="goals section">
             <h2>Goals</h2>
@@ -99,7 +102,18 @@
 
         <section class="blog section">
             <h2>Blog</h2>
-            <div class="blog-post new-blog-post" style="background-color: #ffcc00;">
+            <div class="blog-post new-blog-post" style="background-color: #cc0000c4;">
+                <h3>27/05 Recent Updates and Enhancements</h3>
+                <p>Today, we made significant updates to the portfolio website:</p>
+                <ul>
+                    <li>Integrated the consistent header and navigation across all pages.</li>
+                    <li>Ensured each section is styled consistently with a fixed layout for all devices.</li>
+                    <li>Updated the Machine Learning Project page with collapsible sections and detailed content.</li>
+                    <li>Added a new blog post about today's updates, highlighted in a distinct color to indicate recent activity.</li>
+                    <li>Modified Background and explored options to include new content</li>
+                </ul>
+            </div>
+            <div class="blog-post">
                 <h3>26/05 Website Enhancements and New Project Page</h3>
                 <p>Today, we made significant updates to the portfolio website:</p>
                 <ul>
@@ -108,6 +122,7 @@
                     <li>Styled the main titles to be centered, larger, and in orange for better visibility.</li>
                     <li>Gradually adjusted the background color of each section's collapsible button from darker to lighter shades.</li>
                     <li>Added a new blog post about today's updates, highlighted in a distinct color to indicate recent activity.</li>
+                    <li>Modified Background and explored options to include new content</li>
                 </ul>
             </div>
             <div class="blog-post">

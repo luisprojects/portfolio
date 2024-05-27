@@ -1,16 +1,55 @@
 /* General Styles */
-body {
-    background-color: #000; /* Black background */
-    font-family: Arial, sans-serif;
-    color: #fff; /* White text color */
-    margin: 0;
-    padding: 0;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><rect width="100%" height="100%" fill="black"/><path d="M10 0 L10 1000 M20 0 L20 1000 M30 0 L30 1000 M40 0 L40 1000 M50 0 L50 1000 M60 0 L60 1000 M70 0 L70 1000 M80 0 L80 1000 M90 0 L90 1000 M100 0 L100 1000 M110 0 L110 1000 M120 0 L120 1000 M130 0 L130 1000 M140 0 L140 1000 M150 0 L150 1000 M160 0 L160 1000 M170 0 L170 1000 M180 0 L180 1000 M190 0 L190 1000 M200 0 L200 1000 M210 0 L210 1000 M220 0 L220 1000 M230 0 L230 1000 M240 0 L240 1000 M250 0 L250 1000 M260 0 L260 1000 M270 0 L270 1000 M280 0 L280 1000 M290 0 L290 1000 M300 0 L300 1000 M310 0 L310 1000 M320 0 L320 1000 M330 0 L330 1000 M340 0 L340 1000 M350 0 L350 1000 M360 0 L360 1000 M370 0 L370 1000 M380 0 L380 1000 M390 0 L390 1000 M400 0 L400 1000 M410 0 L410 1000 M420 0 L420 1000 M430 0 L430 1000 M440 0 L440 1000 M450 0 L450 1000 M460 0 L460 1000 M470 0 L470 1000 M480 0 L480 1000 M490 0 L490 1000 M500 0 L500 1000 M510 0 L510 1000 M520 0 L520 1000 M530 0 L530 1000 M540 0 L540 1000 M550 0 L550 1000 M560 0 L560 1000 M570 0 L570 1000 M580 0 L580 1000 M590 0 L590 1000 M600 0 L600 1000 M610 0 L610 1000 M620 0 L620 1000 M630 0 L630 1000 M640 0 L640 1000 M650 0 L650 1000 M660 0 L660 1000 M670 0 L670 1000 M680 0 L680 1000 M690 0 L690 1000 M700 0 L700 1000 M710 0 L710 1000 M720 0 L720 1000 M730 0 L730 1000 M740 0 L740 1000 M750 0 L750 1000 M760 0 L760 1000 M770 0 L770 1000 M780 0 L780 1000 M790 0 L790 1000 M800 0 L800 1000 M810 0 L810 1000 M820 0 L820 1000 M830 0 L830 1000 M840 0 L840 1000 M850 0 L850 1000 M860 0 L860 1000 M870 0 L870 1000 M880 0 L880 1000 M890 0 L890 1000 M900 0 L900 1000 M910 0 L910 1000 M920 0 L920 1000 M930 0 L930 1000 M940 0 L940 1000 M950 0 L950 1000 M960 0 L960 1000 M970 0 L970 1000 M980 0 L980 1000 M990 0 L990 1000 M0 10 L1000 10 M0 20 L1000 20 M0 30 L1000 30 M0 40 L1000 40 M0 50 L1000 50 M0 60 L1000 60 M0 70 L1000 70 M0 80 L1000 80 M0 90 L1000 90 M0 100 L1000 100 M0 110 L1000 110 M0 120 L1000 120 M0 130 L1000 130 M0 140 L1000 140 M0 150 L1000 150 M0 160 L1000 160 M0 170 L1000 170 M0 180 L1000 180 M0 190 L1000 190 M0 200 L1000 200 M0 210 L1000 210 M0 220 L1000 220 M0 230 L1000 230 M0 240 L1000 240 M0 250 L1000 250 M0 260 L1000 260 M0 270 L1000 270 M0 280 L1000 280 M0 290 L1000 290 M0 300 L1000 300 M0 310 L1000 310 M0 320 L1000 320 M0 330 L1000 330 M0 340 L1000 340 M0 350 L1000 350 M0 360 L1000 360 M0 370 L1000 370 M0 380 L1000 380 M0 390 L1000 390 M0 400 L1000 400 M0 410 L1000 410 M0 420 L1000 420 M0 430 L1000 430 M0 440 L1000 440 M0 450 L1000 450 M0 460 L1000 460 M0 470 L1000 470 M0 480 L1000 480 M0 490 L1000 490 M0 500 L1000 500 M0 510 L1000 510 M0 520 L1000 520 M0 530 L1000 530 M0 540 L1000 540 M0 550 L1000 550 M0 560 L1000 560 M0 570 L1000 570 M0 580 L1000 580 M0 590 L1000 590 M0 600 L1000 600 M0 610 L1000 610 M0 620 L1000 620 M0 630 L1000 630 M0 640 L1000 640 M0 650 L1000 650 M0 660 L1000 660 M0 670 L1000 670 M0 680 L1000 680 M0 690 L1000 690 M0 700 L1000 700 M0 710 L1000 710 M0 720 L1000 720 M0 730 L1000 730 M0 740 L1000 740 M0 750 L1000 750 M0 760 L1000 760 M0 770 L1000 770 M0 780 L1000 780 M0 790 L1000 790 M0 800 L1000 800 M0 810 L1000 810 M0 820 L1000 820 M0 830 L1000 830 M0 840 L1000 840 M0 850 L1000 850 M0 860 L1000 860 M0 870 L1000 870 M0 880 L1000 880 M0 890 L1000 890 M0 900 L1000 900 M0 910 L1000 910 M0 920 L1000 920 M0 930 L1000 930 M0 940 L1000 940 M0 950 L1000 950 M0 960 L1000 960 M0 970 L1000 970 M0 980 L1000 980 M0 990 L1000 990" stroke="white" stroke-width="1"/></svg>');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+.gay-container {
+    background-color: rgba(0, 0, 0, 1); /* Semi-transparent dark background */
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    margin: -40px 0 0 0;
+    margin-bottom: -75px;
+    /* Add the background here */
+    background: repeating-linear-gradient(
+        to bottom,
+        #fb0000 ,
+        #fb0000 80px, /* Increased line thickness to 80px */
+        #fb7100 80px,
+        #fb7100 160px, /* Increased line thickness to 160px */
+        #ffdd00 160px,
+        #ffdd00 240px, /* Increased line thickness to 240px */
+        #29d403 240px,
+        #29d403 320px, /* Increased line thickness to 320px */
+        #004bfb 320px,
+        #004bfb 400px, /* Increased line thickness to 400px */
+        #8200fb 400px,
+        #8200fb 480px /* Increased line thickness to 480px */
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 480px; /* Adjust the size to match the line thickness */
 }
 
+body {
+        font-family: Arial, sans-serif;
+        color: #ffffff; /* White text color */
+        margin: -0px 0 0 0; /* Negative top margin to cut the top by 10 pixels */
+        padding: 0;
+        height: 100vh; /* Set the height of the background */
+        background-color: #a4edff; /* White background */
+    }
+
+
+/* Container */
+.title-container {
+    background-color: rgba(0, 0, 0, 1); /* Semi-transparent dark background */
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.indexmain-title {
+    text-align: center;
+    font-size: 5em;
+    color: #ff0000; /* Red color for the main title */
+    margin-bottom: -0px;
+}
 .container {
     background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
     padding: 20px;
@@ -18,16 +57,61 @@ body {
     margin: 20px auto;
     max-width: 1000px; /* Limit the container width */
 }
-
-
-
 .main-title {
     font-size: 3em; /* Larger main title */
     color: #ff9933; /* Orange color */
     text-align: center;
     margin-bottom: 20px;
 }
-
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.intro-content {
+    text-align: center;
+}
+/* New Font Example using Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+.name {
+    font-size: 7em;
+    color: #ffffff; /* White color */
+    font-family: 'Indie Flower', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, cursive; /* Apply the Indie Flower font */
+    line-height: 2;
+    margin-bottom: -20px;
+    font-weight: bold; /* Make the font thicker */
+}
+.profile-pic {
+    border-radius: 50px;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border: 0px solid #000000; /* Orange border */
+    margin-bottom: -150px;
+}
+/* Navigation Styles */
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+}
+nav ul li {
+    margin: 10px;
+}
+nav ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #ff9933;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+nav ul li a:hover {
+    background-color: #cc7a29;
+}
 /* Button Styles */
 .btn {
     display: inline-block;
@@ -41,11 +125,21 @@ body {
     border-radius: 5px;
     text-decoration: none;
 }
-
 .btn:hover {
     background-color: #cc7a29; /* Darker orange on hover */
 }
-
+.large-btn {
+    padding: 10px 50px; /* Increase horizontal padding */
+    font-size: 1.4em; /* Optional: slightly increase font size */
+}
+.red-shine {
+    background-color: #ff0000; /* Red background */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Red glowing shadow */
+    transition: box-shadow 0.3s ease;
+}
+.red-shine:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Stronger red glow on hover */
+}
 /* Section Styles */
 .section {
     background-color: #333; /* Dark gray background for sections */
@@ -53,151 +147,118 @@ body {
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px; /* Limit the section width */
+    margin-left: auto;
+    margin-right: auto;
 }
-
 .section h2 {
     color: #ff9933; /* Orange section titles */
     margin-top: 0;
 }
-
 .section ul {
-    list-style-type: disc;
-    padding-left: 20px;
+    list-style-type: none; /* Remove default list styles */
+    padding: 0;
 }
-
 .section ul li {
     color: #ccc; /* Light gray list items */
-}
-
-.section pre {
-    background-color: #444; /* Darker background for code blocks */
-    padding: 15px;
+    background-color: #444; /* Dark gray background for list items */
+    padding: 10px;
+    margin-bottom: 10px;
     border-radius: 5px;
-    overflow-x: auto;
 }
-
-.section pre code {
-    color: #f0f0f0; /* Light gray code text */
+.item-box {
+    background-color: #444; /* Dark gray background for items */
+    color: #fff; /* White text color */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
-
-.section a {
-    color: #007bff; /* Blue link color */
-}
-
-.section a:hover {
-    color: #0056b3; /* Darker blue on hover */
-}
-
 /* Table Styles */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 40px;
 }
-
 table, th, td {
     border: 1px solid #fff; /* White border */
 }
-
 th, td {
     padding: 15px;
     text-align: left;
     color: #fff; /* White text color */
 }
-
 th {
     background-color: #333; /* Dark gray header background */
 }
-
 td {
     background-color: #444; /* Medium gray cell background */
 }
-
 /* Specific Styles for project-ideas.html */
 body.project-ideas {
     background-color: #2c2c2c; /* Darker background for Project Ideas page */
     color: #f0f0f0; /* Light gray text color */
 }
-
 body.project-ideas .container {
     background-color: #333; /* Dark gray container background */
     padding: 20px;
 }
-
 body.project-ideas h1,
 body.project-ideas h2 {
     color: #28a745; /* Green titles */
 }
-
 body.project-ideas form {
     background-color: #3a3a3a; /* Slightly lighter gray for form background */
 }
-
 body.project-ideas form input,
 body.project-ideas form textarea,
 body.project-ideas form button {
     background-color: #2c2c2c; /* Dark gray input background */
     color: #f0f0f0; /* Light gray text color */
 }
-
 body.project-ideas form button {
     background-color: #28a745; /* Green button background */
 }
-
 body.project-ideas form button:hover {
     background-color: #218838; /* Darker green on hover */
 }
-
 body.project-ideas #ideasContainer {
     background-color: #3a3a3a; /* Dark gray container background */
 }
-
 body.project-ideas .idea {
     background-color: #2c2c2c; /* Dark gray idea background */
 }
-
 body.project-ideas .idea h3 {
     color: #28a745; /* Green idea titles */
 }
-
 body.project-ideas .idea p {
     color: #f0f0f0; /* Light gray idea text */
 }
-
 body.project-ideas .section {
     background-color: #3a3a3a; /* Dark gray section background */
 }
-
 body.project-ideas .section h2 {
     color: #28a745; /* Green section titles */
 }
-
 body.project-ideas .section p,
 body.project-ideas .section ul {
     color: #f0f0f0; /* Light gray section text */
 }
-
 body.project-ideas .home-button {
     background-color: #007bff; /* Blue home button */
 }
-
 body.project-ideas .home-button:hover {
     background-color: #0056b3; /* Darker blue on hover */
 }
-
 body.project-ideas a {
     color: #007bff; /* Blue link color */
 }
-
 body.project-ideas a:hover {
     color: #0056b3; /* Darker blue on hover */
 }
-
 /* Blog Post Styles */
 .blog {
     margin-top: 40px;
 }
-
 .blog .blog-post {
     background-color: #333; /* Dark gray background */
     padding: 20px;
@@ -205,25 +266,20 @@ body.project-ideas a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
-
 .blog .blog-post h3 {
     color: #ff9933; /* Orange blog post titles */
     margin-top: 0;
 }
-
 .blog .blog-post p {
     color: #ccc; /* Light gray blog post text */
 }
-
 .blog .blog-post ul {
     list-style-type: disc;
     padding-left: 20px;
 }
-
 .blog .blog-post ul li {
     color: #ccc; /* Light gray list items */
 }
-
 /* Form Styles */
 form {
     background-color: #333; /* Dark gray form background */
@@ -232,13 +288,11 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
 }
-
 form label {
     display: block;
     margin-bottom: 5px;
     color: #fff; /* White label text */
 }
-
 form input, form textarea, form button {
     width: 100%;
     padding: 10px;
@@ -248,18 +302,15 @@ form input, form textarea, form button {
     background-color: #444; /* Medium gray input background */
     color: #fff; /* White input text */
 }
-
 form button {
     background-color: #ff9933; /* Orange button background */
     color: #fff; /* White button text */
     border: none;
     cursor: pointer;
 }
-
 form button:hover {
     background-color: #cc7a29; /* Darker orange on hover */
 }
-
 /* Additional Sections */
 .additional.section {
     background-color: #333; /* Dark gray section background */
@@ -268,13 +319,11 @@ form button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
 }
-
 .additional.section h2 {
     color: #ff9933; /* Orange section titles */
     text-align: center;
     margin-bottom: 20px;
 }
-
 .additional.section p {
     color: #ccc; /* Light gray section text */
     margin-bottom: 20px;
